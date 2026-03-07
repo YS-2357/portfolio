@@ -3,16 +3,7 @@ import { NavLink, useParams } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { projects } from '../data/projects'
-
-const fetchText = async (url: string) => {
-  const res = await fetch(url)
-  if (!res.ok) return ''
-  const contentType = res.headers.get('content-type') || ''
-  const text = await res.text()
-  if (contentType.includes('text/html')) return ''
-  if (text.trim().toLowerCase().startsWith('<!doctype html')) return ''
-  return text
-}
+import { fetchText } from '../shared/content'
 
 const pages = ['star', 'report'] as const
 
@@ -30,12 +21,16 @@ export default function MarkdownPage() {
   const meta = projects.find((item) => item.slug === project)
 
   useEffect(() => {
-    if (!project) return
+    if (!project || !meta) return
     const safePage = pages.includes(currentPage) ? currentPage : 'star'
-    fetchText(`/content/projects/codeit/${project}/${safePage}.md`)
+    if (!meta.pages.includes(safePage)) {
+      setContent('')
+      return
+    }
+    fetchText(`${meta.contentBasePath}/${safePage}.md`)
       .then((text) => setContent(text))
       .catch(() => setContent(''))
-  }, [project, currentPage])
+  }, [project, currentPage, meta])
 
   if (!project) return null
 
@@ -49,21 +44,21 @@ export default function MarkdownPage() {
           <div className="hero__cta">
             <NavLink
               className={({ isActive }) => `btn${isActive ? ' btn--primary-solar' : ''}`}
-              to={`/projects/codeit/${project}`}
+              to={`/projects/${project}`}
               end
             >
               인포그래픽
             </NavLink>
             <NavLink
               className={({ isActive }) => `btn${isActive ? ' btn--primary-solar' : ''}`}
-              to={`/projects/codeit/${project}/star`}
+              to={`/projects/${project}/star`}
               end
             >
               요약
             </NavLink>
             <NavLink
               className={({ isActive }) => `btn${isActive ? ' btn--primary-solar' : ''}`}
-              to={`/projects/codeit/${project}/report`}
+              to={`/projects/${project}/report`}
               end
             >
               보고서
@@ -77,7 +72,7 @@ export default function MarkdownPage() {
 
       <section className="section markdown">
         <ReactMarkdown remarkPlugins={[remarkGfm]} components={{ h1: () => null }}>
-          {content || '내용이 없습니다.'}
+          {content || '콘텐츠를 준비 중입니다.'}
         </ReactMarkdown>
       </section>
     </div>

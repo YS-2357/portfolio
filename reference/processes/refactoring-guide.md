@@ -7,16 +7,14 @@
 
 ### 1순위: fetchText 유틸 분리 (5분)
 
-**현황:** 4개 파일에 동일한 함수 중복
+**현황:** 여러 페이지에 동일한 함수 중복
 - `App.tsx`
-- `components/ProjectsPage.tsx`
-- `components/MarkdownPage.tsx`
-- `components/AboutPage.tsx`
+- `pages/ProjectsPage.tsx`
+- `pages/MarkdownPage.tsx`
+- `pages/AboutPage.tsx`
 
 **해결:**
-```
-src/utils/fetchText.ts (신규 생성)
-```
+`src/shared/content.ts`로 공통화
 
 ```typescript
 export const fetchText = async (url: string): Promise<string> => {
@@ -32,7 +30,7 @@ export const fetchText = async (url: string): Promise<string> => {
 
 각 파일에서:
 ```typescript
-import { fetchText } from '../utils/fetchText'
+import { fetchText } from '../shared/content'
 ```
 
 ---
@@ -43,7 +41,7 @@ import { fetchText } from '../utils/fetchText'
 
 **해결:**
 ```
-src/components/PageLayout.tsx (신규 생성)
+src/pages/_shared/PageLayout.tsx (신규 생성)
 ```
 
 ```typescript
@@ -79,7 +77,7 @@ export default function PageLayout({ title, eyebrow, children, actions }: PageLa
 
 사용 예시 (AboutPage.tsx):
 ```typescript
-import PageLayout from './PageLayout'
+import PageLayout from './_shared/PageLayout'
 
 export default function AboutPage() {
   const [content, setContent] = useState('')
@@ -104,7 +102,7 @@ export default function AboutPage() {
 
 관련 파일:
 - `app/public/content/resume/miscelleneous.md` → `miscellaneous.md`
-- `components/AboutPage.tsx` 20번 줄 경로 수정
+- `pages/AboutPage.tsx` 경로 수정
 
 ---
 
@@ -112,16 +110,15 @@ export default function AboutPage() {
 
 ```
 src/
-├── utils/
-│   └── fetchText.ts       # 공통 유틸
-├── components/
-│   ├── PageLayout.tsx     # 공통 레이아웃
+├── pages/
 │   ├── AboutPage.tsx
 │   ├── AwardsPage.tsx
 │   ├── EducationPage.tsx
 │   ├── ExperiencePage.tsx
 │   ├── MarkdownPage.tsx
 │   └── ProjectsPage.tsx
+├── shared/
+│   └── content.ts
 ├── App.tsx
 └── main.tsx
 ```

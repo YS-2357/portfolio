@@ -1,15 +1,27 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes, useParams } from 'react-router-dom'
 import './index.css'
 import App from './App.tsx'
-import AwardsPage from './components/AwardsPage.tsx'
-import AboutPage from './components/AboutPage.tsx'
-import ProjectsPage from './components/ProjectsPage.tsx'
-import ExperiencePage from './components/ExperiencePage.tsx'
-import EducationPage from './components/EducationPage.tsx'
-import MarkdownPage from './components/MarkdownPage.tsx'
-import ProjectIntroPage from './components/ProjectIntroPage.tsx'
+import AboutPage from './pages/AboutPage.tsx'
+import AwardsPage from './pages/AwardsPage.tsx'
+import EducationPage from './pages/EducationPage.tsx'
+import ExperiencePage from './pages/ExperiencePage.tsx'
+import MarkdownPage from './pages/MarkdownPage.tsx'
+import ProjectIntroPage from './pages/ProjectIntroPage.tsx'
+import ProjectsPage from './pages/ProjectsPage.tsx'
+
+function LegacyProjectPageRedirect() {
+  const { project, page } = useParams<{ project: string; page: string }>()
+  if (!project || !page) return <Navigate to="/projects" replace />
+  return <Navigate to={`/projects/${project}/${page}`} replace />
+}
+
+function LegacyProjectIntroRedirect() {
+  const { project } = useParams<{ project: string }>()
+  if (!project) return <Navigate to="/projects" replace />
+  return <Navigate to={`/projects/${project}`} replace />
+}
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -21,8 +33,10 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/experience" element={<ExperiencePage />} />
         <Route path="/education" element={<EducationPage />} />
         <Route path="/awards" element={<AwardsPage />} />
-        <Route path="/projects/codeit/:project/:page" element={<MarkdownPage />} />
-        <Route path="/projects/codeit/:project" element={<ProjectIntroPage />} />
+        <Route path="/projects/:project/:page" element={<MarkdownPage />} />
+        <Route path="/projects/:project" element={<ProjectIntroPage />} />
+        <Route path="/projects/codeit/:project/:page" element={<LegacyProjectPageRedirect />} />
+        <Route path="/projects/codeit/:project" element={<LegacyProjectIntroRedirect />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

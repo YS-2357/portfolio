@@ -35,21 +35,21 @@ export default function ProjectIntroPage() {
           <div className="hero__cta">
             <NavLink
               className={({ isActive }) => `btn${isActive ? ' btn--primary-solar' : ''}`}
-              to={`/projects/codeit/${meta.slug}`}
+              to={`/projects/${meta.slug}`}
               end
             >
               인포그래픽
             </NavLink>
             <NavLink
               className={({ isActive }) => `btn${isActive ? ' btn--primary-solar' : ''}`}
-              to={`/projects/codeit/${meta.slug}/star`}
+              to={`/projects/${meta.slug}/star`}
               end
             >
               요약
             </NavLink>
             <NavLink
               className={({ isActive }) => `btn${isActive ? ' btn--primary-solar' : ''}`}
-              to={`/projects/codeit/${meta.slug}/report`}
+              to={`/projects/${meta.slug}/report`}
               end
             >
               보고서

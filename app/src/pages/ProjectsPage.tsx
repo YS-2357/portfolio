@@ -1,32 +1,7 @@
 import { useEffect, useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import { projects } from '../data/projects'
-const fetchText = async (url: string) => {
-  const res = await fetch(url)
-  if (!res.ok) return ''
-  const contentType = res.headers.get('content-type') || ''
-  const text = await res.text()
-  if (contentType.includes('text/html')) return ''
-  if (text.trim().toLowerCase().startsWith('<!doctype html')) return ''
-  return text
-}
-
-const getSummaryLine = (text: string, fallback: string) => {
-  const line = text
-    .split('\n')
-    .map((value) => value.trim())
-    .find(
-      (value) =>
-        value &&
-        !value.startsWith('```') &&
-        !value.startsWith('#') &&
-        !value.startsWith('##') &&
-        !value.startsWith('###') &&
-        !value.startsWith('작성 예정'),
-    )
-  if (!line) return fallback
-  return line.replace(/^[-*]+\s*/, '').trim() || fallback
-}
+import { fetchText, getSummaryLine } from '../shared/content'
 
 export default function ProjectsPage() {
   const [content, setContent] = useState<Record<string, string>>({})
@@ -66,7 +41,7 @@ export default function ProjectsPage() {
               <h2>{project.title}</h2>
               <p>{project.cardSummary || content[project.slug] || '내용이 없습니다.'}</p>
               <div className="project-card__actions">
-                <Link className="btn btn--primary-solar" to={`/projects/codeit/${project.slug}`}>
+                <Link className="btn btn--primary-solar" to={`/projects/${project.slug}`}>
                   상세 보기
                 </Link>
               </div>

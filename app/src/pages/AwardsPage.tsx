@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { fetchText } from '../shared/content'
 type AwardItem = {
   title: string
   meta: string
@@ -10,16 +11,6 @@ type AwardItem = {
 type AwardSection = {
   title: string
   items: AwardItem[]
-}
-
-const fetchText = async (url: string) => {
-  const res = await fetch(url)
-  if (!res.ok) return ''
-  const contentType = res.headers.get('content-type') || ''
-  const text = await res.text()
-  if (contentType.includes('text/html')) return ''
-  if (text.trim().toLowerCase().startsWith('<!doctype html')) return ''
-  return text
 }
 
 const normalizeValue = (value: string) => {

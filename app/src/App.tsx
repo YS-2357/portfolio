@@ -1,17 +1,8 @@
 import { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { projects } from './data/projects'
+import { fetchText, getSummaryLine } from './shared/content'
 import './App.css'
-
-const fetchText = async (url: string) => {
-  const res = await fetch(url)
-  if (!res.ok) return ''
-  const contentType = res.headers.get('content-type') || ''
-  const text = await res.text()
-  if (contentType.includes('text/html')) return ''
-  if (text.trim().toLowerCase().startsWith('<!doctype html')) return ''
-  return text
-}
 
 function App() {
   const [intro, setIntro] = useState('문제 정의에서 배포까지 실행하는 개발자')
@@ -49,23 +40,6 @@ function App() {
     const parts = [date && `${date}년`, title, grade && grade]
     const main = parts.filter(Boolean).join(' ')
     return note ? `${main} (${note})` : main
-  }
-
-  const getSummaryLine = (text: string, fallback: string) => {
-    const line = text
-      .split('\n')
-      .map((value) => value.trim())
-      .find(
-        (value) =>
-          value &&
-          !value.startsWith('```') &&
-          !value.startsWith('#') &&
-          !value.startsWith('##') &&
-          !value.startsWith('###') &&
-          !value.startsWith('작성 예정'),
-      )
-    if (!line) return fallback
-    return line.replace(/^[-*]+\s*/, '').trim() || fallback
   }
 
   useEffect(() => {
@@ -155,9 +129,6 @@ function App() {
             >
               프로젝트 보기
             </NavLink>
-            <a className="btn" href="/content/resume/resume.pdf" target="_blank" rel="noreferrer">
-              이력서 보기
-            </a>
             <NavLink
               className={({ isActive }) => `btn${isActive ? ' btn--primary-solar' : ''}`}
               to="/about"
@@ -265,7 +236,7 @@ function App() {
                 <strong>{project.title}</strong>
                 <p>{project.cardSummary || projectSummaries[project.slug] || project.title}</p>
               </div>
-              <a className="link" href={`/projects/codeit/${project.slug}`}>
+              <a className="link" href={`/projects/${project.slug}`}>
                 상세 보기
               </a>
             </li>

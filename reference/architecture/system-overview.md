@@ -12,8 +12,9 @@ React + TypeScript 정적 포트폴리오 사이트를 제공한다.
 - 현재 라우트:
   - `/`: 랜딩 페이지
   - `/projects`: 프로젝트 목록
-  - `/projects/codeit/:project`: 프로젝트 상세(인포그래픽 페이지)
-  - `/projects/codeit/:project/:page`: 프로젝트 상세(`page`는 `star` 또는 `report`)
+  - `/projects/:project`: 프로젝트 상세(인포그래픽 페이지)
+  - `/projects/:project/:page`: 프로젝트 상세(`page`는 `star` 또는 `report`)
+  - `/projects/codeit/:project`, `/projects/codeit/:project/:page`: 레거시 호환 리다이렉트
   - `/about`: 소개
   - `/experience`: 경력 사항
   - `/education`: 학력/교육

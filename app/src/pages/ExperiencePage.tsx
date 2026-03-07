@@ -1,16 +1,7 @@
 import { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import { parseMarkdownBlocks } from './markdownBlocks'
-
-const fetchText = async (url: string) => {
-  const res = await fetch(url)
-  if (!res.ok) return ''
-  const contentType = res.headers.get('content-type') || ''
-  const text = await res.text()
-  if (contentType.includes('text/html')) return ''
-  if (text.trim().toLowerCase().startsWith('<!doctype html')) return ''
-  return text
-}
+import { parseMarkdownBlocks } from '../lib/markdownBlocks'
+import { fetchText } from '../shared/content'
 
 export default function ExperiencePage() {
   const [blocks, setBlocks] = useState<ReturnType<typeof parseMarkdownBlocks>>([])

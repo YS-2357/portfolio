@@ -13,7 +13,8 @@
 ## 파일 구조
 - 이력서: `app/public/content/resume/`
   - `summary.md`, `experience.md`, `education.md`, `projects.md`
-  - `skills.md`, `language.md`, `miscelleneous.md`, `resume.pdf`
+  - `skills.md`, `language.md`, `miscelleneous.md`
+  - 비노출 이력서 PDF: `asset/private/resume.pdf`
 - 수상: `app/public/content/awards/`
   - `all.md`
   - `<level>/awards.md`
