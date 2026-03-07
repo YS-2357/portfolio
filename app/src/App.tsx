@@ -121,13 +121,13 @@ function App() {
               to="/"
               end
             >
-              랜딩
+              Landing
             </NavLink>
             <NavLink
               className={({ isActive }) => `btn${isActive ? ' btn--primary-solar' : ''}`}
               to="/projects"
             >
-              프로젝트 보기
+              View Projects
             </NavLink>
             <NavLink
               className={({ isActive }) => `btn${isActive ? ' btn--primary-solar' : ''}`}
@@ -195,7 +195,7 @@ function App() {
 
       <section className="section">
         <div className="section__header">
-          <h2>요약</h2>
+          <h2>Summary</h2>
         </div>
         <ul className="summary-list">
           {summaryItems.map((item) => (
@@ -206,7 +206,7 @@ function App() {
 
       <section className="section">
         <div className="section__header">
-          <h2>핵심 역량</h2>
+          <h2>Core Strengths</h2>
         </div>
         <ul className="core-lines">
           <li>
@@ -223,9 +223,9 @@ function App() {
 
       <section className="section">
         <div className="section__header">
-          <h2>프로젝트</h2>
+          <h2>Projects</h2>
           <a className="btn btn--primary-solar" href="/projects">
-            모두 보기
+            View All
           </a>
         </div>
         <ul className="project-list">
@@ -237,7 +237,7 @@ function App() {
                 <p>{project.cardSummary || projectSummaries[project.slug] || project.title}</p>
               </div>
               <a className="link" href={`/projects/${project.slug}`}>
-                상세 보기
+                View Details
               </a>
             </li>
           ))}
@@ -246,9 +246,9 @@ function App() {
 
       <section className="section">
         <div className="section__header">
-          <h2>경력사항</h2>
+          <h2>Experience</h2>
           <a className="btn btn--primary-solar" href="/experience">
-            모두 보기
+            View All
           </a>
         </div>
         <div className="stack">
@@ -265,9 +265,9 @@ function App() {
 
       <section className="section">
         <div className="section__header">
-          <h2>학력/교육</h2>
+          <h2>Education</h2>
           <a className="btn btn--primary-solar" href="/education">
-            모두 보기
+            View All
           </a>
         </div>
         <div className="stack">
@@ -288,9 +288,9 @@ function App() {
 
       <section className="section">
         <div className="section__header">
-          <h2>수상</h2>
+          <h2>Awards</h2>
           <a className="btn btn--primary-solar" href="/awards">
-            모두 보기
+            View All
           </a>
         </div>
         <ul className="core-lines">
@@ -301,7 +301,7 @@ function App() {
 
       <section className="section">
         <div className="section__header">
-          <h2>기술 스택</h2>
+          <h2>Tech Stack</h2>
         </div>
         <div className="tags">
           <span className="badge badge--soft">Python</span>

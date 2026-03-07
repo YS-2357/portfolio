@@ -38,7 +38,7 @@ export default function MarkdownPage() {
     <div className="landing">
       <header className="hero">
         <div className="hero__copy">
-          <p className="hero__eyebrow">프로젝트</p>
+          <p className="hero__eyebrow">Project</p>
           <h1>{meta?.title || project}</h1>
           {meta?.subtitle ? <p className="hero__subtitle">{meta.subtitle}</p> : null}
           <div className="hero__cta">
@@ -47,24 +47,24 @@ export default function MarkdownPage() {
               to={`/projects/${project}`}
               end
             >
-              인포그래픽
+              Infographic
             </NavLink>
             <NavLink
               className={({ isActive }) => `btn${isActive ? ' btn--primary-solar' : ''}`}
               to={`/projects/${project}/star`}
               end
             >
-              요약
+              Summary
             </NavLink>
             <NavLink
               className={({ isActive }) => `btn${isActive ? ' btn--primary-solar' : ''}`}
               to={`/projects/${project}/report`}
               end
             >
-              보고서
+              Report
             </NavLink>
             <NavLink className={({ isActive }) => `btn${isActive ? ' btn--primary-solar' : ''}`} to="/projects">
-              프로젝트 목록
+              Project List
             </NavLink>
           </div>
         </div>

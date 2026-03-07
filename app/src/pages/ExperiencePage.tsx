@@ -17,13 +17,13 @@ export default function ExperiencePage() {
       <header className="hero">
         <div className="hero__copy">
           <p className="hero__eyebrow">Experience</p>
-          <h1>경력사항</h1>
+          <h1>Experience</h1>
           <div className="hero__cta">
             <NavLink className={({ isActive }) => `btn${isActive ? ' btn--primary-solar' : ''}`} to="/experience" end>
-              경력
+              Experience
             </NavLink>
             <NavLink className={({ isActive }) => `btn${isActive ? ' btn--primary-solar' : ''}`} to="/" end>
-              랜딩
+              Landing
             </NavLink>
           </div>
         </div>

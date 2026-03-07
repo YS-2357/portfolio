@@ -22,13 +22,13 @@ export default function ProjectsPage() {
       <header className="hero">
         <div className="hero__copy">
           <p className="hero__eyebrow">Projects</p>
-          <h1>프로젝트 하이라이트</h1>
+          <h1>Project Highlights</h1>
           <div className="hero__cta">
             <NavLink className={({ isActive }) => `btn${isActive ? ' btn--primary-solar' : ''}`} to="/projects" end>
-              프로젝트
+              Projects
             </NavLink>
             <NavLink className={({ isActive }) => `btn${isActive ? ' btn--primary-solar' : ''}`} to="/" end>
-              랜딩
+              Landing
             </NavLink>
           </div>
         </div>
@@ -42,7 +42,7 @@ export default function ProjectsPage() {
               <p>{project.cardSummary || content[project.slug] || '내용이 없습니다.'}</p>
               <div className="project-card__actions">
                 <Link className="btn btn--primary-solar" to={`/projects/${project.slug}`}>
-                  상세 보기
+                  View Details
                 </Link>
               </div>
             </div>

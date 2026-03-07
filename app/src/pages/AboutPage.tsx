@@ -23,7 +23,7 @@ export default function AboutPage() {
               About Me
             </NavLink>
             <NavLink className={({ isActive }) => `btn${isActive ? ' btn--primary-solar' : ''}`} to="/" end>
-              랜딩
+              Landing
             </NavLink>
           </div>
         </div>

@@ -80,14 +80,14 @@ export default function AwardsPage() {
     <div className="landing">
       <header className="hero">
         <div className="hero__copy">
-          <p className="hero__eyebrow">수상</p>
-          <h1>전체 수상 목록</h1>
+          <p className="hero__eyebrow">Awards</p>
+          <h1>All Awards</h1>
           <div className="hero__cta">
             <NavLink className={({ isActive }) => `btn${isActive ? ' btn--primary-solar' : ''}`} to="/awards" end>
-              수상
+              Awards
             </NavLink>
             <NavLink className={({ isActive }) => `btn${isActive ? ' btn--primary-solar' : ''}`} to="/" end>
-              랜딩
+              Landing
             </NavLink>
           </div>
         </div>
@@ -100,7 +100,7 @@ export default function AwardsPage() {
           <div className="awards">
             {sections.map((section) => (
               <div className="awards__section" key={section.title}>
-                <h2>{section.title} 수상</h2>
+                <h2>{section.title} Awards</h2>
                 <ul className="awards__list">
                   {section.items.map((item, index) => (
                     <li className="awards__item" key={`${section.title}-${index}`}>
@@ -109,7 +109,7 @@ export default function AwardsPage() {
                       {item.note && <div className="awards__note">{item.note}</div>}
                       {item.link && (
                         <a className="awards__link" href={item.link} target="_blank" rel="noreferrer">
-                          상세 링크
+                          Details
                         </a>
                       )}
                     </li>

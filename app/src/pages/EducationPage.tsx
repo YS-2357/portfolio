@@ -17,13 +17,13 @@ export default function EducationPage() {
       <header className="hero">
         <div className="hero__copy">
           <p className="hero__eyebrow">Education</p>
-          <h1>학력/교육</h1>
+          <h1>Education</h1>
           <div className="hero__cta">
             <NavLink className={({ isActive }) => `btn${isActive ? ' btn--primary-solar' : ''}`} to="/education" end>
-              학력/교육
+              Education
             </NavLink>
             <NavLink className={({ isActive }) => `btn${isActive ? ' btn--primary-solar' : ''}`} to="/" end>
-              랜딩
+              Landing
             </NavLink>
           </div>
         </div>
@@ -79,7 +79,7 @@ export default function EducationPage() {
                           target="_blank"
                           rel="noreferrer"
                         >
-                          코드잇 링크
+                          Codeit Link
                         </a>
                       ))}
                   </div>

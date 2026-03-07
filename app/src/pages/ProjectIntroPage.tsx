@@ -29,7 +29,7 @@ export default function ProjectIntroPage() {
     <div className="landing">
       <header className="hero">
         <div className="hero__copy">
-          <p className="hero__eyebrow">프로젝트</p>
+          <p className="hero__eyebrow">Project</p>
           <h1>{meta.title}</h1>
           <p className="hero__subtitle">{meta.subtitle}</p>
           <div className="hero__cta">
@@ -38,28 +38,28 @@ export default function ProjectIntroPage() {
               to={`/projects/${meta.slug}`}
               end
             >
-              인포그래픽
+              Infographic
             </NavLink>
             <NavLink
               className={({ isActive }) => `btn${isActive ? ' btn--primary-solar' : ''}`}
               to={`/projects/${meta.slug}/star`}
               end
             >
-              요약
+              Summary
             </NavLink>
             <NavLink
               className={({ isActive }) => `btn${isActive ? ' btn--primary-solar' : ''}`}
               to={`/projects/${meta.slug}/report`}
               end
             >
-              보고서
+              Report
             </NavLink>
             <NavLink
               className={({ isActive }) => `btn${isActive ? ' btn--primary-solar' : ''}`}
               to="/projects"
               end
             >
-              프로젝트 목록
+              Project List
             </NavLink>
           </div>
         </div>
