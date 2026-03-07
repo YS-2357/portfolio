@@ -1,35 +1,35 @@
 ---
 name: "code-refactoring"
-description: "코드 중복 제거 및 구조 개선을 위한 리팩토링 스킬."
+description: "Refactoring skill for removing duplication and improving structure."
 ---
 
-# 목적
-- 중복 코드 제거
-- 공통 컴포넌트/유틸 분리
-- 유지보수성 향상
+# Goal
+- Remove duplicated code
+- Extract shared components/utilities
+- Improve maintainability
 
-# 우선순위 작업
+# Priority Tasks
 
-| 순위 | 작업 | 예상 시간 |
-|------|------|----------|
-| 1 | fetchText 유틸 분리 | 5분 |
-| 2 | PageLayout 컴포넌트 | 15분 |
-| 3 | 파일명 오타 수정 | 1분 |
+| Priority | Task | Estimated Time |
+|----------|------|----------------|
+| 1 | Extract `fetchText` utility | 5 min |
+| 2 | Introduce `PageLayout` component | 15 min |
+| 3 | Fix filename typo | 1 min |
 
-# 절차
+# Procedure
 
-## fetchText 분리
-1. `src/utils/fetchText.ts` 생성
-2. 4개 파일에서 중복 함수 삭제
-3. import 문 추가
+## Extract `fetchText`
+1. Create `src/utils/fetchText.ts`
+2. Remove duplicate functions across files
+3. Add import statements
 
-## PageLayout 분리
-1. `src/components/PageLayout.tsx` 생성
-2. 각 페이지 컴포넌트에서 레이아웃 코드 제거
-3. PageLayout으로 래핑
+## Split out `PageLayout`
+1. Create `src/components/PageLayout.tsx`
+2. Remove duplicated layout code in each page
+3. Wrap pages with `PageLayout`
 
-# 참고 문서
+# Reference
 - `reference/processes/refactoring-guide.md`
 
-# 스크립트
-- `scripts/run.sh`: 린트 및 빌드 확인용
+# Script
+- `scripts/run.sh`: lint/build verification helper

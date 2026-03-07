@@ -1,8 +1,8 @@
-# 스킬 목록(프론트엔드)
+# Skill List (Frontend)
 
-- static-portfolio-ui: 정적 React + TypeScript UI 관리.
-- content-authoring: 이력서/포트폴리오 콘텐츠 편집.
-- firebase-hosting: Firebase Hosting 설정/배포.
-- asset-management: 이미지/로고 경로, 네이밍, 적용 규칙 관리.
-- landing-ui-tuning: 랜딩 페이지 섹션/레이아웃/강조 규칙 조정.
-- doc-updater: 코드/콘텐츠 변경에 맞춰 reference/skills 문서를 갱신.
+- static-portfolio-ui: maintain static React + TypeScript UI.
+- content-authoring: edit resume/portfolio content.
+- firebase-hosting: configure/deploy Firebase Hosting.
+- asset-management: manage image/logo paths, naming, usage rules.
+- landing-ui-tuning: adjust landing sections/layout/emphasis.
+- doc-updater: update `reference/` and `skills/` docs to match code/content changes.

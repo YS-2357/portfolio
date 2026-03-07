@@ -1,27 +1,28 @@
-# 랜딩 페이지 규칙
+# Landing Page Guidelines
 
-## 비주얼 방향
-- 배경은 밤하늘 톤의 단색 사용(그라데이션 금지).
-- 흰색 콘텐츠 블록으로 대비를 명확히 한다.
-- 배경 질감은 점/노이즈 패턴 수준으로만 추가한다.
+## Visual Direction
+- Use a solid night-sky tone for background (no gradients).
+- Use white content blocks for clear contrast.
+- If needed, add only subtle dot/noise texture.
 
-## 레이아웃
-- 히어로, 핵심 역량, 프로젝트, 연락처 순서로 구성한다.
-- 섹션은 흰색 카드형 블록으로 구분한다.
-- 카드 간 간격을 넉넉히 두고 여백 중심으로 설계한다.
+## Layout
+- Use this section order: hero -> core strengths -> projects -> contacts.
+- Separate sections with white card-style blocks.
+- Favor generous spacing and clear whitespace rhythm.
 
-## 타이포
-- 제목은 굵고 짧게, 본문은 간결하게 유지한다.
-- 강조색은 1개만 사용한다.
+## Typography
+- Keep titles bold and short.
+- Keep body text concise.
+- Use only one accent color.
 
-## 시각 자산
-- 프로필 이미지와 스킬 배지(로고)를 준비해 섹션 밀도를 높인다.
-- 이미지 경로는 `app/public/asset/images/` 하위에서 관리한다.
+## Visual Assets
+- Prepare profile image and skill badges to improve density.
+- Manage image paths under `app/public/asset/images/`.
 
-## 기술 스택 배지
-- 랜딩에 노출하는 스택은 핵심 위주로 8~12개만 유지한다.
-- LLM API, LangChain/LangGraph, FAISS, Streamlit 등 실전 사용 항목을 반영한다.
+## Tech Stack Badges
+- Keep 8-12 key stacks on landing.
+- Reflect practical stacks such as LLM API, LangChain/LangGraph, FAISS, Streamlit.
 
-## 금지 사항
-- 그라데이션 배경 또는 그라데이션 카드 사용 금지.
-- 과도한 그림자/글로우 효과 금지.
+## Prohibited
+- No gradient backgrounds/cards.
+- No heavy shadows/glow effects.

@@ -1,40 +1,40 @@
-# 랜딩 템플릿 적용 가이드
+# Landing Template Integration Guide
 
-## 대상
-- Vite + React + TypeScript 앱: `app/`
-- 템플릿 파일: `asset/templates/landing-example.tsx`, `asset/templates/landing-example.css`
+## Scope
+- Vite + React + TypeScript app: `app/`
+- Template files: `asset/templates/landing-example.tsx`, `asset/templates/landing-example.css`
 
-## 적용 순서
-1) `app/src/components/landing/` 폴더 생성
-2) 템플릿 파일 복사
-   - `asset/templates/landing-example.tsx` → `app/src/components/landing/LandingExample.tsx`
-   - `asset/templates/landing-example.css` → `app/src/components/landing/landing-example.css`
-3) `app/src/App.tsx`에서 `LandingExample` 사용
-4) 필요 시 `app/src/index.css`에 전역 폰트만 추가
-5) 라우터 구성
-   - 프로젝트 인포그래픽: `/projects/:project`
-   - 프로젝트 상세: `/projects/:project/:page`
-   - 수상 전체: `/awards`
+## Steps
+1. Create `app/src/components/landing/`
+2. Copy template files
+   - `asset/templates/landing-example.tsx` -> `app/src/components/landing/LandingExample.tsx`
+   - `asset/templates/landing-example.css` -> `app/src/components/landing/landing-example.css`
+3. Use `LandingExample` in `app/src/App.tsx`
+4. Add global font setup to `app/src/index.css` if needed
+5. Configure routes
+   - Project infographic: `/projects/:project`
+   - Project detail: `/projects/:project/:page`
+   - Awards page: `/awards`
 
-## 주의 사항
-- 배경은 단색 밤하늘 톤 유지(그라데이션 금지)
-- 흰색 카드 블록으로 섹션을 구분
-- 강조색은 1개만 사용
-- 현재 페이지는 CTA 버튼에 `btn--primary-solar`로 강조한다.
+## Cautions
+- Keep solid night-sky background (no gradients)
+- Separate sections with white card blocks
+- Use only one accent color
+- Highlight current page CTA with `btn--primary-solar`
 
-## 데이터 연결
-- 정적 콘텐츠는 `app/public/content/`에서 fetch로 읽는다.
-- 경로 예: `/content/resume/summary.md`
-- 프로젝트 문서 경로 예:
+## Data Wiring
+- Read static content from `app/public/content/` via fetch
+- Example path: `/content/resume/summary.md`
+- Project content paths:
   - `/content/projects/codeit/<project>/star.md`
   - `/content/projects/<project>/summary.md`
-- Notion 원본은 `/content/_notion/`에 저장하되 UI에 직접 노출하지 않는다.
+- Keep Notion source in `/content/_notion/` without direct UI rendering
 
-## 정적 자산
-- 프로젝트 이미지: `app/public/asset/images/projects/`
-- 경로 예:
+## Static Assets
+- Project images: `app/public/asset/images/projects/`
+- Example paths:
   - `/asset/images/projects/<project>/<file>`
   - `/asset/images/projects/codeit/<project>/<file>`
-- 인포그래픽 예:
+- Infographic examples:
   - `/asset/images/projects/<project>/infographic.png`
   - `/asset/images/projects/codeit/<project>/infographic.png`

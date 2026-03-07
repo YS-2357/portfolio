@@ -1,14 +1,14 @@
 #!/bin/bash
-# 리팩토링 후 검증 스크립트
+# Post-refactor verification script
 
 cd "$(dirname "$0")/../../../app" || exit 1
 
-echo "=== ESLint 검사 ==="
+echo "=== Running ESLint ==="
 npm run lint
 
 echo ""
-echo "=== TypeScript 빌드 ==="
+echo "=== Running TypeScript build ==="
 npm run build
 
 echo ""
-echo "=== 완료 ==="
+echo "=== Done ==="

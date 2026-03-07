@@ -1,15 +1,15 @@
 ---
 name: "firebase-hosting"
-description: "프론트엔드 반복 작업을 위한 스킬. 정적 포트폴리오 사이트 유지 관리용."
+description: "Skill for recurring frontend work in a static portfolio site."
 ---
 
-# 목적
-- 정적 프론트엔드를 일관되게 유지한다.
+# Goal
+- Keep the static frontend consistent.
 
-# 절차
-1. 관련 콘텐츠/라우트/UI를 확인한다.
-2. 최소 변경으로 수정한다.
-3. 가능하면 빌드/린트 명령을 확인한다.
+# Procedure
+1. Inspect related content/routes/UI.
+2. Make the smallest safe change.
+3. Run build/lint checks when possible.
 
-# 스크립트
-- `scripts/run.sh`: 실행 가능 여부 확인용 스크립트.
+# Script
+- `scripts/run.sh`: quick execution/verification helper.

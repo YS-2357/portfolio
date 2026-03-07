@@ -1,27 +1,27 @@
-# 수상 데이터 포맷
+# Awards Data Format
 
-## 목적
-수상 정보를 UI와 RAG 모두에서 일관되게 활용하기 위한 포맷 규칙.
+## Goal
+Define one consistent format so both UI and RAG can use award data reliably.
 
-## 파일 위치
-- 원문: `app/public/content/awards/<level>/awards.md`
-- 전체 목록: `app/public/content/awards/all.md`
+## File Locations
+- Source files: `app/public/content/awards/<level>/awards.md`
+- Combined list: `app/public/content/awards/all.md`
 
-## 항목 형식
-한 줄에 하나의 수상 정보를 기록한다.
+## Entry Format
+Store one award per line.
 
 ```
-- 구분: <값> | 수상명: <값> | 등급: <값> | 일자: YYYY.MM.DD | 주관: <값> | 비고: <값> | 링크: <값>
+- Type: <value> | Name: <value> | Grade: <value> | Date: YYYY.MM.DD | Host: <value> | Note: <value> | Link: <value>
 ```
 
-## 필드 규칙
-- `구분`, `수상명`, `일자`, `주관`은 가능한 한 작성한다.
-- 값이 없으면 `-`로 표기한다.
-- 링크는 URL로 작성한다.
+## Field Rules
+- Fill `Type`, `Name`, `Date`, `Host` whenever possible.
+- Use `-` for unavailable values.
+- Write links as URLs.
 
-## UI 파싱 규칙
-- `-` 값은 출력하지 않는다.
-- 제목은 `수상명`을 사용한다.
-- 보조 정보는 `일자 · 등급 · 주관` 순서로 표시한다.
-- `비고`는 부가 설명으로 별도 노출한다.
-- `링크`는 "상세 링크"로 표시한다.
+## UI Parsing Rules
+- Hide fields with `-`.
+- Use `Name` as title.
+- Show metadata in `Date · Grade · Host` order.
+- Render `Note` as supplementary text.
+- Render `Link` as "Details".

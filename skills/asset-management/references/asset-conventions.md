@@ -6,7 +6,7 @@
 - Projects: `app/public/asset/images/projects/`
 - Experience: `app/public/asset/images/intalk/`
 - Misc: `app/public/asset/images/misc/`
-- Notion 원본: `app/public/content/_notion/` (이미지는 별도 저장 권장)
+- Notion source archive: `app/public/content/_notion/` (store images separately when possible)
 
 ## Naming
 - Lowercase with hyphens: `profile-main.png`, `react-logo.svg`
