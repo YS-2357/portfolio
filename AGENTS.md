@@ -19,6 +19,10 @@ This is a React + TypeScript static portfolio site deployed on Firebase Hosting.
 - Award data format: `reference/domain/awards-format.md`
 - Firebase Hosting: `reference/processes/firebase-hosting.md`
 - Landing template integration: `reference/processes/landing-implementation.md`
+- Shared AI context: `ai/shared/project-context.md`
+- Shared architecture summary: `ai/shared/architecture.md`
+- Shared glossary: `ai/shared/glossary.md`
+- Common AI workflows: `ai/tasks/common-workflows.md`
 
 ## Shared Assets
 - Keep shared UI/content assets under `asset/`.
