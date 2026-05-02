@@ -14,12 +14,12 @@ export default function ExperiencePage() {
   }, [])
 
   return (
-    <PageShell>
-      <OrbitalRing size={350} opacity={0.06} color="#0c0e1a" className="absolute bottom-16 left-0" style={{ position: 'absolute' }} />
+    <PageShell planet="mars">
+      <OrbitalRing size={350} opacity={0.06} className="absolute bottom-16 left-0" style={{ position: 'absolute' }} />
 
       <div className="relative z-10 max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-24">
         <p className="eyebrow mb-3">Career</p>
-        <h1 className="text-4xl md:text-5xl font-bold mb-12" style={{ color: 'var(--page-text)', letterSpacing: '-0.03em' }}>
+        <h1 className="text-4xl md:text-5xl font-bold mb-12" style={{ color: 'var(--card-bright)', letterSpacing: '-0.03em' }}>
           Experience
         </h1>
 

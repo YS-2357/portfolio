@@ -15,12 +15,12 @@ export default function AboutPage() {
   }, [])
 
   return (
-    <PageShell>
-      <OrbitalRing size={450} opacity={0.07} color="#0c0e1a" className="absolute top-16 right-0" style={{ position: 'absolute' }} />
+    <PageShell planet="earth">
+      <OrbitalRing size={450} opacity={0.07} className="absolute top-16 right-0" style={{ position: 'absolute' }} />
 
       <div className="relative z-10 max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-24">
         <p className="eyebrow mb-3">Personal</p>
-        <h1 className="text-4xl md:text-5xl font-bold mb-12" style={{ color: 'var(--page-text)', letterSpacing: '-0.03em' }}>
+        <h1 className="text-4xl md:text-5xl font-bold mb-12" style={{ color: 'var(--card-bright)', letterSpacing: '-0.03em' }}>
           About Me
         </h1>
 

@@ -5,15 +5,15 @@ import OrbitalRing from '../components/OrbitalRing'
 
 export default function ProjectsPage() {
   return (
-    <PageShell>
-      <OrbitalRing size={500} opacity={0.06} color="#0c0e1a" rotate={20} className="absolute top-16 right-0" style={{ position: 'absolute' }} />
+    <PageShell planet="jupiter">
+      <OrbitalRing size={500} opacity={0.06} rotate={20} className="absolute top-16 right-0" style={{ position: 'absolute' }} />
 
       <div className="relative z-10 max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-24">
         <p className="eyebrow mb-3">Observatory</p>
-        <h1 className="text-4xl md:text-5xl font-bold mb-2" style={{ color: 'var(--page-text)', letterSpacing: '-0.03em' }}>
+        <h1 className="text-4xl md:text-5xl font-bold mb-2" style={{ color: 'var(--card-bright)', letterSpacing: '-0.03em' }}>
           Projects
         </h1>
-        <p className="text-base mb-14" style={{ color: 'var(--page-muted)' }}>
+        <p className="text-base mb-14" style={{ color: 'var(--card-dim)' }}>
           Production systems and research projects in AI engineering.
         </p>
 
@@ -45,7 +45,7 @@ export default function ProjectsPage() {
         <section>
           <div className="flex items-end justify-between gap-4 mb-4">
             <p className="eyebrow">Codeit AI Sprint 01기</p>
-            <span className="text-xs" style={{ color: 'var(--page-muted)' }}>2024.12 – 2025.07 · 팀장 3회</span>
+            <span className="text-xs" style={{ color: 'var(--card-dim)' }}>2024.12 – 2025.07 · 팀장 3회</span>
           </div>
           <div className="glass-card overflow-hidden">
             {bootcampProjects.map((p, i) => (

@@ -4,29 +4,34 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Design tokens ── */
 :root {
-  /* Page level — museum white */
-  --page-bg:       #f5f6f8;
-  --page-text:     #0f172a;
-  --page-muted:    #64748b;
-  --page-border:   #e2e8f0;
+  /* Deep space page */
+  --page-bg:     #070c18;
+  --page-text:   #e6f0ff;
+  --page-muted:  #9ca3af;
+  --page-border: rgba(255,255,255,0.10);
 
-  /* Card level — deep space */
-  --card-bg:       #0c0e1a;
-  --card-bright:   #ffffff;
-  --card-text:     #e6f0ff;
-  --card-dim:      #9ca3af;
-  --card-muted:    #6b7280;
-  --card-border:   rgba(255,255,255,0.10);
+  /* Card interiors (slightly lighter than void) */
+  --card-bg:     #0f1629;
+  --card-bright: #ffffff;
+  --card-text:   #e6f0ff;
+  --card-dim:    #9ca3af;
+  --card-muted:  #6b7280;
+  --card-border: rgba(255,255,255,0.10);
 
-  /* Planet accents */
+  /* Planet accent — overridden per page via PageShell */
+  --planet-color: #f2c14e;
+  --planet-glow:  rgba(242,193,78,0.12);
+
+  /* Legacy aliases kept for compatibility */
   --color-solar:   #f2c14e;
   --color-mercury: #94a3b8;
   --color-earth:   #60a5fa;
   --color-mars:    #f87171;
   --color-jupiter: #fb923c;
 
-  --nav-height:    64px;
+  --nav-height: 64px;
 }
 
 @layer base {
@@ -40,134 +45,165 @@
 
   body {
     margin: 0;
-    background-color: var(--page-bg);
     color: var(--page-text);
     font-family: 'Space Grotesk', 'Noto Sans KR', 'Pretendard', system-ui, sans-serif;
     min-height: 100vh;
+    /* Deep space background with star field */
+    background-color: var(--page-bg);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Ccircle cx='23' cy='47' r='1.1' fill='rgba(255,255,255,0.55)'/%3E%3Ccircle cx='87' cy='12' r='0.7' fill='rgba(255,255,255,0.35)'/%3E%3Ccircle cx='156' cy='89' r='1.3' fill='rgba(255,255,255,0.45)'/%3E%3Ccircle cx='231' cy='34' r='0.9' fill='rgba(255,255,255,0.4)'/%3E%3Ccircle cx='312' cy='67' r='1.2' fill='rgba(255,255,255,0.5)'/%3E%3Ccircle cx='378' cy='23' r='0.6' fill='rgba(255,255,255,0.3)'/%3E%3Ccircle cx='45' cy='134' r='0.8' fill='rgba(255,255,255,0.35)'/%3E%3Ccircle cx='123' cy='178' r='1.4' fill='rgba(255,255,255,0.55)'/%3E%3Ccircle cx='267' cy='145' r='0.7' fill='rgba(255,255,255,0.4)'/%3E%3Ccircle cx='345' cy='198' r='1.1' fill='rgba(255,255,255,0.45)'/%3E%3Ccircle cx='67' cy='234' r='0.9' fill='rgba(255,255,255,0.35)'/%3E%3Ccircle cx='189' cy='267' r='1.2' fill='rgba(255,255,255,0.5)'/%3E%3Ccircle cx='289' cy='312' r='0.6' fill='rgba(255,255,255,0.3)'/%3E%3Ccircle cx='356' cy='289' r='1.5' fill='rgba(255,255,255,0.55)'/%3E%3Ccircle cx='12' cy='356' r='1.0' fill='rgba(255,255,255,0.4)'/%3E%3Ccircle cx='134' cy='345' r='0.7' fill='rgba(255,255,255,0.35)'/%3E%3Ccircle cx='234' cy='378' r='1.2' fill='rgba(255,255,255,0.45)'/%3E%3Ccircle cx='389' cy='367' r='0.8' fill='rgba(255,255,255,0.35)'/%3E%3Ccircle cx='78' cy='301' r='0.5' fill='rgba(255,255,255,0.25)'/%3E%3Ccircle cx='199' cy='156' r='1.0' fill='rgba(255,255,255,0.4)'/%3E%3Ccircle cx='321' cy='234' r='0.8' fill='rgba(255,255,255,0.3)'/%3E%3Ccircle cx='167' cy='23' r='1.1' fill='rgba(255,255,255,0.45)'/%3E%3Ccircle cx='44' cy='67' r='0.6' fill='rgba(255,255,255,0.3)'/%3E%3Ccircle cx='289' cy='189' r='0.9' fill='rgba(255,255,255,0.35)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 400px 400px;
   }
 
   a { color: inherit; text-decoration: none; }
 
-  ::selection {
-    background-color: rgba(242,193,78,0.25);
+  h1, h2, h3, h4, h5, h6 {
     color: var(--card-bright);
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background-color: rgba(242,193,78,0.3);
+    color: #fff;
   }
 
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: var(--page-bg); }
-  ::-webkit-scrollbar-thumb { background: var(--page-border); border-radius: 3px; }
-  ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+  ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.22); }
 }
 
 @layer components {
 
-  /* ── Space card — dark interior, clean white outline ── */
+  /* ── Space card — dark float with clean white border + planet nebula glow ── */
   .glass-card {
     @apply rounded-2xl;
+    position: relative;
+    overflow: hidden;
     background: var(--card-bg);
     border: 1px solid rgba(255,255,255,0.10);
-    box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.5);
     transition: box-shadow 0.2s ease, border-color 0.2s ease;
   }
+  .glass-card::before {
+    content: '';
+    position: absolute;
+    top: -48px; right: -48px;
+    width: 180px; height: 180px;
+    background: radial-gradient(circle, var(--planet-glow, rgba(242,193,78,0.12)) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .glass-card > * { position: relative; z-index: 1; }
   .glass-card:hover {
     border-color: rgba(255,255,255,0.22);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.7);
   }
 
-  /* ── Eyebrow — Mars red label ── */
+  /* ── Eyebrow — driven by planet color ── */
   .eyebrow {
     @apply text-xs font-semibold tracking-widest uppercase;
-    color: var(--color-mars);
+    color: var(--planet-color);
   }
 
-  /* ── Stat chip — dark card with solar number ── */
+  /* ── Stat chip ── */
   .stat-chip {
     @apply rounded-xl px-4 py-3 text-center;
     background: var(--card-bg);
     border: 1px solid rgba(255,255,255,0.08);
+    position: relative;
+    overflow: hidden;
   }
+  .stat-chip::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 120px; height: 120px;
+    background: radial-gradient(circle, var(--planet-glow, rgba(242,193,78,0.12)) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .stat-chip > * { position: relative; z-index: 1; }
 
-  /* ── Solar button — unchanged ── */
+  /* ── Solar button (sun — consistent across all pages) ── */
   .btn-solar {
     @apply inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold cursor-pointer;
     background: var(--color-solar);
-    color: #0c0e1a;
+    color: #070c18;
     transition: box-shadow 0.2s ease, transform 0.15s ease;
   }
   .btn-solar:hover {
-    box-shadow: 0 0 24px rgba(242,193,78,0.4);
+    box-shadow: 0 0 24px rgba(242,193,78,0.45);
     transform: translateY(-1px);
   }
 
-  /* ── Ghost button — light page variant ── */
+  /* ── Ghost button — dark page variant ── */
   .btn-ghost {
     @apply inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-sm font-medium cursor-pointer;
-    border-color: var(--page-border);
-    color: var(--page-muted);
+    border-color: rgba(255,255,255,0.15);
+    color: var(--card-dim);
     background: transparent;
     transition: border-color 0.2s ease, color 0.2s ease;
   }
   .btn-ghost:hover {
-    border-color: var(--color-solar);
-    color: var(--color-solar);
+    border-color: var(--planet-color);
+    color: var(--planet-color);
   }
 
-  /* ── Nav link — dark text on white nav ── */
+  /* ── Nav link ── */
   .nav-link {
     @apply text-sm font-medium transition-colors duration-150;
-    color: #475569;
+    color: var(--card-dim);
   }
-  .nav-link:hover { color: var(--page-text); }
+  .nav-link:hover { color: var(--card-bright); }
   .nav-link.active {
-    color: var(--color-solar);
+    color: var(--planet-color);
     font-weight: 600;
   }
 
-  /* ── Section heading — solar underline rule ── */
+  /* ── Section heading — planet underline ── */
   .section-heading {
     @apply text-lg font-semibold tracking-tight relative pb-3;
-    color: var(--page-text);
+    color: var(--card-bright);
   }
   .section-heading::after {
     content: '';
     position: absolute;
     left: 0; bottom: 0;
     width: 32px; height: 2px;
-    background: var(--color-solar);
+    background: var(--planet-color);
     border-radius: 1px;
+    box-shadow: 0 0 6px var(--planet-glow, rgba(242,193,78,0.4));
   }
 
-  /* ── Skill tag — light variant ── */
+  /* ── Skill tag — dark variant ── */
   .skill-tag {
     @apply rounded-full border px-3 py-1 text-xs font-medium;
-    border-color: var(--page-border);
-    color: var(--page-muted);
-    background: #ffffff;
+    border-color: rgba(255,255,255,0.12);
+    color: var(--card-dim);
+    background: rgba(255,255,255,0.04);
     transition: border-color 0.15s ease, color 0.15s ease;
   }
   .skill-tag:hover {
-    border-color: var(--color-earth);
-    color: var(--color-earth);
+    border-color: var(--planet-color);
+    color: var(--planet-color);
   }
 
   /* ── Project label badge ── */
   .project-label {
     @apply rounded-full px-2.5 py-0.5 text-xs font-bold tracking-wide uppercase;
-    background: rgba(242,193,78,0.15);
+    background: rgba(242,193,78,0.12);
     color: var(--color-solar);
-    border: 1px solid rgba(242,193,78,0.3);
+    border: 1px solid rgba(242,193,78,0.25);
   }
 
-  /* ── Timeline entry — Mars-red dot ── */
-  .timeline-entry {
-    @apply relative pl-6;
-  }
+  /* ── Timeline entry — planet-colored dot + line ── */
+  .timeline-entry { @apply relative pl-6; }
   .timeline-entry::before {
     content: '';
     position: absolute;
     left: 0; top: 10px; bottom: 0;
     width: 1px;
-    background: linear-gradient(to bottom, var(--color-mars), transparent);
+    background: linear-gradient(to bottom, var(--planet-color), transparent);
   }
   .timeline-entry::after {
     content: '';
@@ -175,32 +211,25 @@
     left: -4px; top: 10px;
     width: 9px; height: 9px;
     border-radius: 50%;
-    background: var(--color-mars);
-    box-shadow: 0 0 8px rgba(248,113,113,0.5);
+    background: var(--planet-color);
+    box-shadow: 0 0 10px var(--planet-glow, rgba(242,193,78,0.5));
   }
 
-  /* ── Tab nav — light variant ── */
+  /* ── Tab nav ── */
   .tab-nav {
     @apply flex gap-1 p-1 rounded-xl;
-    background: #e2e8f0;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
   }
   .tab-link {
     @apply px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-150;
-    color: var(--page-muted);
+    color: var(--card-dim);
   }
-  .tab-link:hover { color: var(--page-text); }
+  .tab-link:hover { color: var(--card-bright); }
   .tab-link.active {
-    background: #ffffff;
-    color: var(--page-text);
+    background: rgba(255,255,255,0.08);
+    color: var(--planet-color);
     font-weight: 600;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-  }
-
-  /* ── Orbital ring — kept for decoration ── */
-  .orbital-ring {
-    pointer-events: none;
-    border-radius: 50%;
-    border: 1px solid rgba(0,0,0,0.06);
-    position: absolute;
+    box-shadow: 0 0 8px var(--planet-glow, rgba(242,193,78,0.2));
   }
 }

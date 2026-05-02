@@ -88,19 +88,19 @@ function App() {
   }, [])
 
   return (
-    <PageShell>
+    <PageShell planet="sun">
       <div className="relative z-10 max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24">
 
         {/* ── Hero ── */}
         <section className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12 lg:gap-16 items-start mb-14">
           <div>
             <p className="eyebrow mb-4">AI Engineer · AWS GenAI Professional</p>
-            <h1 className="text-5xl md:text-6xl font-bold mb-2" style={{ color: 'var(--page-text)', letterSpacing: '-0.03em' }}>
+            <h1 className="text-5xl md:text-6xl font-bold mb-2" style={{ color: 'var(--card-bright)', letterSpacing: '-0.03em' }}>
               Young Sun Joung
             </h1>
             <p className="text-2xl font-medium mb-5" style={{ color: 'var(--color-solar)' }}>정영선</p>
             {intro && (
-              <p className="text-base leading-relaxed mb-8 max-w-lg" style={{ color: 'var(--page-muted)' }}>
+              <p className="text-base leading-relaxed mb-8 max-w-lg" style={{ color: 'var(--card-dim)' }}>
                 {intro}
               </p>
             )}
@@ -126,7 +126,7 @@ function App() {
 
           {/* YS card — dark space interior */}
           <div className="relative flex justify-center lg:justify-end">
-            <OrbitalRing size={320} opacity={0.08} color="#0c0e1a" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+            <OrbitalRing size={320} opacity={0.08} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
             <div className="glass-card p-7 text-center animate-float w-full max-w-[260px] relative z-10">
               <div
                 className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl font-bold"
@@ -205,7 +205,7 @@ function App() {
           </div>
           <div className="mt-3 flex items-center gap-2">
             <span className="project-label">🏆</span>
-            <p className="text-xs" style={{ color: 'var(--page-muted)' }}>{awards.bootcamp}</p>
+            <p className="text-xs" style={{ color: 'var(--card-dim)' }}>{awards.bootcamp}</p>
           </div>
         </section>
 

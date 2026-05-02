@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 
 const NAV_LINKS = [
-  { to: '/',           label: 'Home',       end: true },
+  { to: '/',           label: 'Home',       end: true  },
   { to: '/projects',   label: 'Projects',   end: false },
   { to: '/experience', label: 'Experience', end: false },
   { to: '/education',  label: 'Education',  end: false },
@@ -15,15 +15,13 @@ export default function Nav() {
       className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-10"
       style={{
         height: 'var(--nav-height)',
-        background: '#ffffff',
-        borderBottom: '1px solid #e2e8f0',
+        background: 'rgba(7,12,24,0.85)',
+        backdropFilter: 'blur(12px)',
+        WebkitBackdropFilter: 'blur(12px)',
+        borderBottom: '1px solid rgba(255,255,255,0.07)',
       }}
     >
-      <NavLink
-        to="/"
-        className="text-sm font-bold tracking-widest"
-        style={{ color: 'var(--color-solar)' }}
-      >
+      <NavLink to="/" className="text-sm font-bold tracking-widest" style={{ color: 'var(--color-solar)' }}>
         YS
       </NavLink>
 
@@ -46,7 +44,7 @@ export default function Nav() {
         target="_blank"
         rel="noreferrer"
         className="text-xs font-medium transition-colors duration-150"
-        style={{ color: '#64748b' }}
+        style={{ color: 'var(--card-dim)' }}
       >
         GitHub ↗
       </a>
