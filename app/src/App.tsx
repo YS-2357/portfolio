@@ -149,15 +149,18 @@ function App() {
           </div>
         </section>
 
-        {/* ── K-Digital Award chip (only verified external metric) ── */}
-        <section className="flex gap-4 mb-16">
-          {METRICS.map(({ value, label, sub }) => (
-            <div key={label} className="stat-chip flex-1 max-w-xs">
-              <div className="text-2xl font-bold mb-1" style={{ color: 'var(--color-solar)' }}>{value}</div>
-              <div className="text-sm font-semibold mb-0.5" style={{ color: 'var(--card-text)' }}>{label}</div>
-              <div className="text-sm" style={{ color: 'var(--card-muted)' }}>{sub}</div>
+        {/* ── K-Digital Award banner ── */}
+        <section className="mb-16">
+          <div className="glass-card px-8 py-5 flex items-center justify-between gap-6 flex-wrap">
+            <div className="flex items-center gap-5">
+              <span className="text-3xl font-bold" style={{ color: 'var(--color-solar)' }}>3rd / 389</span>
+              <div>
+                <p className="text-base font-semibold" style={{ color: 'var(--card-text)' }}>K-Digital Hackathon</p>
+                <p className="text-sm" style={{ color: 'var(--card-muted)' }}>Ministry of Labor Award · 고용노동부 장관상</p>
+              </div>
             </div>
-          ))}
+            <span className="project-label text-sm px-3 py-1">🏆 Top 0.8%</span>
+          </div>
         </section>
 
         {/* ── Featured Project (Compare-AI) ── */}

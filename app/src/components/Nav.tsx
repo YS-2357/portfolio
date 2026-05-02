@@ -25,7 +25,7 @@ export default function Nav() {
         YS
       </NavLink>
 
-      <ul className="hidden md:flex items-center gap-7 list-none m-0 p-0">
+      <ul className="hidden sm:flex items-center gap-4 lg:gap-7 list-none m-0 p-0">
         {NAV_LINKS.map(({ to, label, end }) => (
           <li key={to}>
             <NavLink
