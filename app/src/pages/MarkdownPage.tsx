@@ -31,11 +31,11 @@ export default function MarkdownPage() {
     <PageShell>
       <div className="relative z-10 max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-24">
         <p className="eyebrow mb-3">Project</p>
-        <h1 className="text-4xl md:text-5xl font-bold mb-2" style={{ color: 'var(--color-bright)', letterSpacing: '-0.03em' }}>
+        <h1 className="text-4xl md:text-5xl font-bold mb-2" style={{ color: 'var(--page-text)', letterSpacing: '-0.03em' }}>
           {meta?.title || project}
         </h1>
         {meta?.subtitle && (
-          <p className="text-base mb-8" style={{ color: 'var(--color-dim)' }}>{meta.subtitle}</p>
+          <p className="text-base mb-8" style={{ color: 'var(--page-muted)' }}>{meta.subtitle}</p>
         )}
 
         <div className="tab-nav mb-10 overflow-x-auto">
@@ -70,7 +70,7 @@ export default function MarkdownPage() {
         </div>
 
         <div className="glass-card p-8">
-          <div className="prose prose-invert max-w-none prose-img:rounded-xl prose-img:border prose-a:text-solar prose-headings:text-space-bright prose-code:text-solar prose-code:bg-space-deep prose-pre:bg-space-deep prose-pre:border prose-pre:border-space-border prose-table:text-space-text prose-th:text-space-bright prose-td:border-space-border prose-th:border-space-border">
+          <div className="prose prose-invert max-w-none prose-img:rounded-xl prose-img:border prose-img:border-white/10 prose-a:text-solar prose-headings:text-white prose-code:text-solar prose-code:bg-space-void prose-pre:bg-space-void prose-pre:border prose-pre:border-white/10">
             <ReactMarkdown remarkPlugins={[remarkGfm]} components={{ h1: () => null }}>
               {content || '콘텐츠를 준비 중입니다.'}
             </ReactMarkdown>

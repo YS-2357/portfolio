@@ -15,10 +15,8 @@ export default function Nav() {
       className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-10"
       style={{
         height: 'var(--nav-height)',
-        background: 'rgba(8,9,13,0.85)',
-        backdropFilter: 'blur(12px)',
-        WebkitBackdropFilter: 'blur(12px)',
-        borderBottom: '1px solid rgba(30,34,53,0.8)',
+        background: '#ffffff',
+        borderBottom: '1px solid #e2e8f0',
       }}
     >
       <NavLink
@@ -48,7 +46,7 @@ export default function Nav() {
         target="_blank"
         rel="noreferrer"
         className="text-xs font-medium transition-colors duration-150"
-        style={{ color: 'var(--color-dim)' }}
+        style={{ color: '#64748b' }}
       >
         GitHub ↗
       </a>

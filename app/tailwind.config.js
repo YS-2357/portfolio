@@ -6,24 +6,23 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Space card interiors
         space: {
-          void:    '#08090d',
-          deep:    '#0d0f18',
-          surface: '#12151f',
-          border:  '#1e2235',
-          muted:   '#4a5278',
-          dim:     '#8892b0',
-          text:    '#ccd6f6',
-          bright:  '#e6f0ff',
+          void:    '#0c0e1a',
+          deep:    '#0f1121',
+          surface: '#151828',
+          border:  'rgba(255,255,255,0.10)',
+          muted:   '#6b7280',
+          dim:     '#9ca3af',
+          text:    '#e6f0ff',
+          bright:  '#ffffff',
         },
-        solar: {
-          DEFAULT: '#f2c14e',
-          dim:     '#c9972c',
-        },
-        nebula: {
-          DEFAULT: '#60a5fa',
-          dim:     '#3b82f6',
-        },
+        // Planet palette
+        solar:   { DEFAULT: '#f2c14e', dim: '#c9972c' },  // Sun
+        mercury: { DEFAULT: '#94a3b8', dim: '#64748b' },  // Mercury
+        earth:   { DEFAULT: '#60a5fa', dim: '#3b82f6' },  // Earth
+        mars:    { DEFAULT: '#f87171', dim: '#ef4444' },  // Mars
+        jupiter: { DEFAULT: '#fb923c', dim: '#f97316' },  // Jupiter
       },
       fontFamily: {
         sans: ['Space Grotesk', 'Noto Sans KR', 'system-ui', 'sans-serif'],
@@ -33,10 +32,10 @@ export default {
         '2xs': ['0.625rem', { lineHeight: '1rem' }],
       },
       boxShadow: {
-        'solar-sm': '0 0 12px rgba(242,193,78,0.25)',
-        'solar-md': '0 0 24px rgba(242,193,78,0.35)',
-        'card':     '0 4px 24px rgba(0,0,0,0.4)',
-        'card-hover': '0 8px 40px rgba(0,0,0,0.6)',
+        'card':      '0 2px 16px rgba(0,0,0,0.10), 0 0 0 1px rgba(255,255,255,0.08)',
+        'card-hover':'0 8px 32px rgba(0,0,0,0.18), 0 0 0 1px rgba(255,255,255,0.18)',
+        'solar-sm':  '0 0 12px rgba(242,193,78,0.3)',
+        'solar-md':  '0 0 24px rgba(242,193,78,0.4)',
       },
       keyframes: {
         'pulse-glow': {

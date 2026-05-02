@@ -71,23 +71,17 @@ export default function AwardsPage() {
 
   return (
     <PageShell>
-      <OrbitalRing
-        size={320}
-        opacity={0.05}
-        rotate={15}
-        className="absolute bottom-12 left-0"
-        style={{ position: 'absolute' }}
-      />
+      <OrbitalRing size={320} opacity={0.07} color="#0c0e1a" rotate={15} className="absolute bottom-12 left-0" style={{ position: 'absolute' }} />
 
       <div className="relative z-10 max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-24">
         <p className="eyebrow mb-3">Recognition</p>
-        <h1 className="text-4xl md:text-5xl font-bold mb-12" style={{ color: 'var(--color-bright)', letterSpacing: '-0.03em' }}>
+        <h1 className="text-4xl md:text-5xl font-bold mb-12" style={{ color: 'var(--page-text)', letterSpacing: '-0.03em' }}>
           Awards
         </h1>
 
         {sections.length === 0 ? (
           <div className="glass-card p-8">
-            <p className="text-sm" style={{ color: 'var(--color-dim)' }}>내용이 없습니다.</p>
+            <p className="text-sm" style={{ color: 'var(--card-dim)' }}>내용이 없습니다.</p>
           </div>
         ) : (
           <div className="space-y-10">
@@ -100,12 +94,12 @@ export default function AwardsPage() {
                       key={`${section.title}-${i}`}
                       className="glass-card p-5 flex flex-col gap-1.5"
                     >
-                      <p className="text-base font-semibold" style={{ color: 'var(--color-bright)' }}>{item.title}</p>
+                      <p className="text-base font-semibold" style={{ color: 'var(--card-bright)' }}>{item.title}</p>
                       {item.meta && (
-                        <p className="text-xs tracking-wide" style={{ color: 'var(--color-muted)' }}>{item.meta}</p>
+                        <p className="text-xs tracking-wide" style={{ color: 'var(--card-muted)' }}>{item.meta}</p>
                       )}
                       {item.note && (
-                        <p className="text-xs italic" style={{ color: 'var(--color-dim)' }}>{item.note}</p>
+                        <p className="text-xs italic" style={{ color: 'var(--card-dim)' }}>{item.note}</p>
                       )}
                       {item.link && (
                         <div className="mt-2">

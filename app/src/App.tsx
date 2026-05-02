@@ -7,10 +7,7 @@ import OrbitalRing from './components/OrbitalRing'
 import './App.css'
 
 const METRICS = [
-  { value: '0.99334', label: 'mAP@0.5', sub: 'Pill Recognition' },
-  { value: '−90%',   label: 'Search Time', sub: 'RFP RAG' },
-  { value: '3rd/389', label: 'K-Digital Hackathon', sub: 'Ministry of Labor Award' },
-  { value: '6h→10m', label: 'Page Generation', sub: 'GEOPage' },
+  { value: '3rd / 389', label: 'K-Digital Hackathon', sub: 'Ministry of Labor Award' },
 ]
 
 const TRUST_SIGNALS = [
@@ -98,12 +95,12 @@ function App() {
         <section className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12 lg:gap-16 items-start mb-14">
           <div>
             <p className="eyebrow mb-4">AI Engineer · AWS GenAI Professional</p>
-            <h1 className="text-5xl md:text-6xl font-bold mb-2" style={{ color: 'var(--color-bright)', letterSpacing: '-0.03em' }}>
+            <h1 className="text-5xl md:text-6xl font-bold mb-2" style={{ color: 'var(--page-text)', letterSpacing: '-0.03em' }}>
               Young Sun Joung
             </h1>
             <p className="text-2xl font-medium mb-5" style={{ color: 'var(--color-solar)' }}>정영선</p>
             {intro && (
-              <p className="text-base leading-relaxed mb-8 max-w-lg" style={{ color: 'var(--color-dim)' }}>
+              <p className="text-base leading-relaxed mb-8 max-w-lg" style={{ color: 'var(--page-muted)' }}>
                 {intro}
               </p>
             )}
@@ -127,22 +124,23 @@ function App() {
             </div>
           </div>
 
+          {/* YS card — dark space interior */}
           <div className="relative flex justify-center lg:justify-end">
-            <OrbitalRing size={320} opacity={0.06} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+            <OrbitalRing size={320} opacity={0.08} color="#0c0e1a" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
             <div className="glass-card p-7 text-center animate-float w-full max-w-[260px] relative z-10">
               <div
                 className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl font-bold"
-                style={{ background: 'rgba(242,193,78,0.1)', color: 'var(--color-solar)', border: '1px solid rgba(242,193,78,0.2)' }}
+                style={{ background: 'rgba(242,193,78,0.15)', color: 'var(--color-solar)', border: '1px solid rgba(242,193,78,0.3)' }}
               >
                 YS
               </div>
-              <p className="text-sm font-semibold mb-1" style={{ color: 'var(--color-bright)' }}>AI Engineer</p>
-              <p className="text-xs mb-3" style={{ color: 'var(--color-muted)' }}>M.S. Mathematics · Korea Univ.</p>
-              <div className="space-y-2 pt-3" style={{ borderTop: '1px solid var(--color-border)' }}>
+              <p className="text-sm font-semibold mb-1" style={{ color: 'var(--card-bright)' }}>AI Engineer</p>
+              <p className="text-xs mb-3" style={{ color: 'var(--card-dim)' }}>M.S. Mathematics · Korea Univ.</p>
+              <div className="space-y-2 pt-3" style={{ borderTop: '1px solid var(--card-border)' }}>
                 {TRUST_SIGNALS.map((s) => (
                   <div key={s.label}>
                     <p className="text-xs font-semibold" style={{ color: 'var(--color-solar)' }}>{s.label}</p>
-                    <p className="text-xs" style={{ color: 'var(--color-muted)' }}>{s.sub}</p>
+                    <p className="text-xs" style={{ color: 'var(--card-muted)' }}>{s.sub}</p>
                   </div>
                 ))}
               </div>
@@ -150,13 +148,13 @@ function App() {
           </div>
         </section>
 
-        {/* ── Metrics ── */}
-        <section className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+        {/* ── K-Digital Award chip (only verified external metric) ── */}
+        <section className="flex gap-4 mb-16">
           {METRICS.map(({ value, label, sub }) => (
-            <div key={label} className="stat-chip">
+            <div key={label} className="stat-chip flex-1 max-w-xs">
               <div className="text-2xl font-bold mb-1" style={{ color: 'var(--color-solar)' }}>{value}</div>
-              <div className="text-xs font-semibold mb-0.5" style={{ color: 'var(--color-text)' }}>{label}</div>
-              <div className="text-xs" style={{ color: 'var(--color-muted)' }}>{sub}</div>
+              <div className="text-xs font-semibold mb-0.5" style={{ color: 'var(--card-text)' }}>{label}</div>
+              <div className="text-xs" style={{ color: 'var(--card-muted)' }}>{sub}</div>
             </div>
           ))}
         </section>
@@ -169,21 +167,15 @@ function App() {
           </div>
           {featuredProjects.map((p) => (
             <div key={p.slug} className="glass-card p-7">
-              <div className="flex items-start justify-between gap-4 flex-wrap mb-4">
-                <div className="flex items-center gap-3">
-                  <span className="project-label">{p.label}</span>
-                  <span className="text-xs px-2 py-0.5 rounded-full" style={{ background: 'rgba(96,165,250,0.12)', color: 'var(--color-nebula)', border: '1px solid rgba(96,165,250,0.2)' }}>
-                    ongoing
-                  </span>
-                </div>
-                <div className="text-right">
-                  <div className="text-xl font-bold" style={{ color: 'var(--color-solar)' }}>{p.primaryMetric}</div>
-                  <div className="text-xs" style={{ color: 'var(--color-muted)' }}>{p.primaryMetricLabel}</div>
-                </div>
+              <div className="flex items-start gap-3 flex-wrap mb-4">
+                <span className="project-label">{p.label}</span>
+                <span className="text-xs px-2 py-0.5 rounded-full" style={{ background: 'rgba(96,165,250,0.15)', color: 'var(--color-earth)', border: '1px solid rgba(96,165,250,0.25)' }}>
+                  ongoing
+                </span>
               </div>
-              <h3 className="text-xl font-semibold mb-2" style={{ color: 'var(--color-bright)' }}>{p.title}</h3>
-              <p className="text-sm leading-relaxed mb-5" style={{ color: 'var(--color-dim)' }}>{p.cardSummary}</p>
-              <div className="flex justify-end pt-4" style={{ borderTop: '1px solid var(--color-border)' }}>
+              <h3 className="text-xl font-semibold mb-2" style={{ color: 'var(--card-bright)' }}>{p.title}</h3>
+              <p className="text-sm leading-relaxed mb-5" style={{ color: 'var(--card-dim)' }}>{p.cardSummary}</p>
+              <div className="flex justify-end pt-4" style={{ borderTop: '1px solid var(--card-border)' }}>
                 <Link to={`/projects/${p.slug}`} className="btn-solar text-xs px-4 py-2">View Details →</Link>
               </div>
             </div>
@@ -196,44 +188,40 @@ function App() {
             <h2 className="section-heading">Bootcamp Projects</h2>
             <span className="eyebrow" style={{ fontSize: '0.6rem' }}>Codeit AI Sprint 01기 · 2024.12–2025.07</span>
           </div>
-          <div className="glass-card divide-y" style={{ '--tw-divide-opacity': 1 } as React.CSSProperties}>
-            {bootcampProjects.map((p) => (
-              <div key={p.slug} className="flex items-center justify-between gap-4 px-6 py-4 flex-wrap">
+          <div className="glass-card overflow-hidden">
+            {bootcampProjects.map((p, i) => (
+              <div
+                key={p.slug}
+                className="flex items-center justify-between gap-4 px-6 py-4 flex-wrap"
+                style={i > 0 ? { borderTop: '1px solid var(--card-border)' } : {}}
+              >
                 <div className="flex items-center gap-3 min-w-0">
                   <span className="project-label shrink-0">{p.label}</span>
-                  <span className="text-sm font-medium truncate" style={{ color: 'var(--color-text)' }}>{p.title}</span>
+                  <span className="text-sm font-medium truncate" style={{ color: 'var(--card-text)' }}>{p.title}</span>
                 </div>
-                <div className="flex items-center gap-4 shrink-0">
-                  <div className="text-right">
-                    <div className="text-base font-bold" style={{ color: 'var(--color-solar)' }}>{p.primaryMetric}</div>
-                    <div className="text-xs" style={{ color: 'var(--color-muted)' }}>{p.primaryMetricLabel}</div>
-                  </div>
-                  <Link to={`/projects/${p.slug}`} className="btn-ghost text-xs px-3 py-1.5">View →</Link>
-                </div>
+                <Link to={`/projects/${p.slug}`} className="btn-ghost text-xs px-3 py-1.5 shrink-0">View →</Link>
               </div>
             ))}
           </div>
           <div className="mt-3 flex items-center gap-2">
-            <span className="project-label" style={{ background: 'rgba(242,193,78,0.15)' }}>🏆</span>
-            <p className="text-xs" style={{ color: 'var(--color-dim)' }}>
-              {awards.bootcamp}
-            </p>
+            <span className="project-label">🏆</span>
+            <p className="text-xs" style={{ color: 'var(--page-muted)' }}>{awards.bootcamp}</p>
           </div>
         </section>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-16">
           {/* ── Skills ── */}
           <section className="glass-card p-6">
-            <h2 className="section-heading mb-5">Tech Stack</h2>
+            <h2 className="section-heading mb-5" style={{ color: 'var(--card-bright)' }}>Tech Stack</h2>
             <div className="space-y-4">
               <div>
-                <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: 'var(--color-muted)' }}>AI / ML</p>
+                <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: 'var(--card-muted)' }}>AI / ML</p>
                 <div className="flex flex-wrap gap-2">
                   {SKILLS_AI.map((s) => <span key={s} className="skill-tag">{s}</span>)}
                 </div>
               </div>
               <div>
-                <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: 'var(--color-muted)' }}>Engineering</p>
+                <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: 'var(--card-muted)' }}>Engineering</p>
                 <div className="flex flex-wrap gap-2">
                   {SKILLS_ENG.map((s) => <span key={s} className="skill-tag">{s}</span>)}
                 </div>
@@ -244,17 +232,17 @@ function App() {
           {/* ── Experience preview ── */}
           <section className="glass-card p-6">
             <div className="flex items-center justify-between mb-5">
-              <h2 className="section-heading">Experience</h2>
+              <h2 className="section-heading" style={{ color: 'var(--card-bright)' }}>Experience</h2>
               <Link to="/experience" className="btn-ghost text-xs px-3 py-1.5">View All →</Link>
             </div>
             <div className="space-y-5">
               <div className="timeline-entry">
-                <p className="text-sm font-semibold mb-0.5" style={{ color: 'var(--color-bright)' }}>메가존클라우드 · AI 아키텍처 유닛 매니저</p>
-                <p className="text-xs" style={{ color: 'var(--color-muted)' }}>2026.02 – 현재</p>
+                <p className="text-sm font-semibold mb-0.5" style={{ color: 'var(--card-bright)' }}>메가존클라우드 · AI 아키텍처 유닛 매니저</p>
+                <p className="text-xs" style={{ color: 'var(--card-muted)' }}>2026.02 – 현재</p>
               </div>
               <div className="timeline-entry">
-                <p className="text-sm font-semibold mb-0.5" style={{ color: 'var(--color-bright)' }}>(주)인톡 · AI Developer Intern</p>
-                <p className="text-xs" style={{ color: 'var(--color-muted)' }}>2025.11 – 2026.01</p>
+                <p className="text-sm font-semibold mb-0.5" style={{ color: 'var(--card-bright)' }}>(주)인톡 · AI Developer Intern</p>
+                <p className="text-xs" style={{ color: 'var(--card-muted)' }}>2025.11 – 2026.01</p>
               </div>
             </div>
           </section>
@@ -264,7 +252,7 @@ function App() {
         <section className="glass-card p-6 text-center">
           <p className="eyebrow mb-3">Contact</p>
           {contact.phone && (
-            <p className="text-sm mb-5" style={{ color: 'var(--color-dim)' }}>{contact.phone}</p>
+            <p className="text-sm mb-5" style={{ color: 'var(--card-dim)' }}>{contact.phone}</p>
           )}
           <div className="flex flex-wrap justify-center gap-3">
             {contact.email && (
