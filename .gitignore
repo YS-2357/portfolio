@@ -35,4 +35,9 @@ app/.firebase/
 *.sw?
 
 # Notion raw exports
-app/public/content/_notion/intalk/
+app/public/content/_notion/
+
+# Private assets (resume PDF, etc.)
+asset/private/
+
+.claude/
