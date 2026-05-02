@@ -10,7 +10,7 @@ import './App.css'
 const TRUST_SIGNALS = [
   { label: 'Megazone Cloud', sub: 'AI Architect Unit · Manager' },
   { label: 'AWS GenAI Pro', sub: 'AIP-C01 Beta · Early Adopter' },
-  { label: 'Top 0.8%', sub: '3rd / 389 teams · K-Digital' },
+  { label: 'Top 0.8%', sub: '3rd · 7th K-Digital Training Hackathon' },
 ]
 
 const SKILLS_AI  = ['Claude', 'Codex', 'Kiro', 'LangChain', 'LangGraph']
@@ -20,7 +20,7 @@ const SKILLS_ENG = ['Python', 'FastAPI', 'React', 'TypeScript', 'Firebase']
 function App() {
   const [intro, setIntro] = useState('')
   const [awards, setAwards] = useState({
-    bootcamp: '제7회 K-디지털 해커톤 장관상: 우수상, 전체 389팀 중 3등',
+    bootcamp: '제7회 K-디지털 트레이닝 해커톤 고용노동부 장관상 (우수상) — 389팀 중 3등',
     university: '전국 대학생 수학 경시대회: 동상, 제1분야',
   })
   const [contact, setContact] = useState({
@@ -152,8 +152,8 @@ function App() {
             <div className="flex items-center gap-5">
               <span className="text-3xl font-bold" style={{ color: 'var(--color-solar)' }}>3rd / 389</span>
               <div>
-                <p className="text-base font-semibold" style={{ color: 'var(--card-text)' }}>K-Digital Hackathon</p>
-                <p className="text-sm" style={{ color: 'var(--card-muted)' }}>Ministry of Labor Award · 고용노동부 장관상</p>
+                <p className="text-base font-semibold" style={{ color: 'var(--card-text)' }}>제7회 K-디지털 트레이닝 해커톤</p>
+                <p className="text-sm" style={{ color: 'var(--card-muted)' }}>고용노동부 장관상 (우수상) · GEOPage 자유과제</p>
               </div>
             </div>
             <span className="project-label text-sm px-3 py-1">🏆 Top 0.8%</span>
