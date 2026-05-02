@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
 import { fetchText } from '../shared/content'
+import PageShell from '../components/PageShell'
+import OrbitalRing from '../components/OrbitalRing'
+
 type AwardItem = {
   title: string
   meta: string
@@ -27,30 +29,22 @@ const parseLine = (line: string): AwardItem | null => {
     acc[key.trim()] = rest.join(':').trim()
     return acc
   }, {})
-  const date = normalizeValue(fields['일자'] || '')
+  const date  = normalizeValue(fields['일자'] || '')
   const title = normalizeValue(fields['수상명'] || fields['대회'] || '')
   const grade = normalizeValue(fields['등급'] || fields['수상내역'] || '')
-  const host = normalizeValue(fields['주관'] || fields['기관'] || '')
-  const note = normalizeValue(fields['비고'] || fields['대상'] || '')
-  const link = normalizeValue(fields['링크'] || '')
-  const metaParts = [date, grade, host].filter(Boolean)
-  const meta = metaParts.join(' · ')
-  return {
-    title,
-    meta,
-    note: note || undefined,
-    link: link || undefined,
-  }
+  const host  = normalizeValue(fields['주관'] || fields['기관'] || '')
+  const note  = normalizeValue(fields['비고'] || fields['대상'] || '')
+  const link  = normalizeValue(fields['링크'] || '')
+  const meta  = [date, grade, host].filter(Boolean).join(' · ')
+  return { title, meta, note: note || undefined, link: link || undefined }
 }
 
 const parseAwards = (text: string): AwardSection[] => {
-  const lines = text.split('\n').map((line) => line.trim())
+  const lines = text.split('\n').map((l) => l.trim())
   const sections: AwardSection[] = []
   let current: AwardSection | null = null
-
   for (const line of lines) {
-    if (!line) continue
-    if (line.startsWith('# ')) continue
+    if (!line || line.startsWith('# ')) continue
     if (line.startsWith('##')) {
       const cleaned = line.replace(/^##\s*/, '').replace(/^#+\s*/, '').trim()
       current = { title: cleaned, items: [] }
@@ -63,7 +57,6 @@ const parseAwards = (text: string): AwardSection[] => {
       if (item && current) current.items.push(item)
     }
   }
-
   return sections
 }
 
@@ -77,49 +70,63 @@ export default function AwardsPage() {
   }, [])
 
   return (
-    <div className="landing">
-      <header className="hero">
-        <div className="hero__copy">
-          <p className="hero__eyebrow">Awards</p>
-          <h1>All Awards</h1>
-          <div className="hero__cta">
-            <NavLink className={({ isActive }) => `btn${isActive ? ' btn--primary-solar' : ''}`} to="/awards" end>
-              Awards
-            </NavLink>
-            <NavLink className={({ isActive }) => `btn${isActive ? ' btn--primary-solar' : ''}`} to="/" end>
-              Landing
-            </NavLink>
-          </div>
-        </div>
-      </header>
+    <PageShell>
+      <OrbitalRing
+        size={320}
+        opacity={0.05}
+        rotate={15}
+        className="absolute bottom-12 left-0"
+        style={{ position: 'absolute' }}
+      />
 
-      <section className="section">
+      <div className="relative z-10 max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-24">
+        <p className="eyebrow mb-3">Recognition</p>
+        <h1 className="text-4xl md:text-5xl font-bold mb-12" style={{ color: 'var(--color-bright)', letterSpacing: '-0.03em' }}>
+          Awards
+        </h1>
+
         {sections.length === 0 ? (
-          <p>내용이 없습니다.</p>
+          <div className="glass-card p-8">
+            <p className="text-sm" style={{ color: 'var(--color-dim)' }}>내용이 없습니다.</p>
+          </div>
         ) : (
-          <div className="awards">
+          <div className="space-y-10">
             {sections.map((section) => (
-              <div className="awards__section" key={section.title}>
-                <h2>{section.title} Awards</h2>
-                <ul className="awards__list">
-                  {section.items.map((item, index) => (
-                    <li className="awards__item" key={`${section.title}-${index}`}>
-                      <div className="awards__title">{item.title}</div>
-                      {item.meta && <div className="awards__meta">{item.meta}</div>}
-                      {item.note && <div className="awards__note">{item.note}</div>}
-                      {item.link && (
-                        <a className="awards__link" href={item.link} target="_blank" rel="noreferrer">
-                          Details
-                        </a>
+              <div key={section.title}>
+                <p className="eyebrow mb-4">{section.title}</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {section.items.map((item, i) => (
+                    <div
+                      key={`${section.title}-${i}`}
+                      className="glass-card p-5 flex flex-col gap-1.5"
+                    >
+                      <p className="text-base font-semibold" style={{ color: 'var(--color-bright)' }}>{item.title}</p>
+                      {item.meta && (
+                        <p className="text-xs tracking-wide" style={{ color: 'var(--color-muted)' }}>{item.meta}</p>
                       )}
-                    </li>
+                      {item.note && (
+                        <p className="text-xs italic" style={{ color: 'var(--color-dim)' }}>{item.note}</p>
+                      )}
+                      {item.link && (
+                        <div className="mt-2">
+                          <a
+                            href={item.link}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="btn-solar text-xs px-3 py-1.5"
+                          >
+                            Details ↗
+                          </a>
+                        </div>
+                      )}
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
             ))}
           </div>
         )}
-      </section>
-    </div>
+      </div>
+    </PageShell>
   )
 }

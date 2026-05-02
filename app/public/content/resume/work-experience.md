@@ -1,5 +1,10 @@
 # Work Experience
 
+## 메가존클라우드 | AI 아키텍처 유닛 / 매니저 | 2026.02.09 - 현재
+- 역할 요약: AI 아키텍처 유닛 매니저로서 클라우드 기반 AI 솔루션 아키텍처 설계 및 팀 운영.
+- 주요 활동:
+  - 자격증: AWS Certified Generative AI Developer - Professional (Beta, AIP-C01) 취득.
+
 ## (주)인톡 | 인턴 / AI 개발자 | 2025.11.06 - 2026.01.05
 - 역할 요약: LangChain 기반 보험 보장분석 자동화 파이프라인 설계/구축.
 - 주요 성과:

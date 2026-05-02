@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Navigate, Route, Routes, useParams } from 'react-router-dom'
 import './index.css'
+import Nav from './components/Nav'
 import App from './App.tsx'
 import AboutPage from './pages/AboutPage.tsx'
 import AwardsPage from './pages/AwardsPage.tsx'
@@ -26,6 +27,7 @@ function LegacyProjectIntroRedirect() {
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
+      <Nav />
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/projects" element={<ProjectsPage />} />

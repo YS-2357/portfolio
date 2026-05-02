@@ -1,5 +1,11 @@
 # 수상 전체
 
+## 자격증
+
+# 자격증
+
+- 구분: 자격증 | 수상명: AWS Certified Generative AI Developer - Professional | 등급: Beta (AIP-C01) | 일자: 2026.02 | 주관: Amazon Web Services | 비고: Early Adopter
+
 ## 부트캠프
 
 # 수상(부트캠프)
