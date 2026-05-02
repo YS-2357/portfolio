@@ -1,13 +1,24 @@
 # Skills
 
-## AI / ML
-- Object Detection: YOLOv8, Faster R-CNN
-- Dataset: COCO Annotation
+## AI Coding Agents
+- Claude (Anthropic)
+- GitHub Copilot / Codex (OpenAI)
+- Kiro (AWS)
+
+## AWS
+- Amazon Bedrock
+- Amazon Q Developer
+- Amazon SageMaker
+- AWS Lambda, EC2, S3
 
 ## LLM / RAG
-- LangChain
+- LangChain, LangGraph
 - Vector Store: Chroma, FAISS
-- LLM API: OpenAI, Anthropic(Claude), Gemini, Perplexity, Mistral, Groq, Cohere, DeepSeek
+- LLM API: OpenAI, Anthropic, Gemini, Perplexity, Mistral, Groq, Cohere, DeepSeek
+
+## AI / ML
+- YOLOv8, Faster R-CNN
+- COCO Annotation
 
 ## Backend
 - Python, FastAPI
@@ -16,8 +27,4 @@
 - React, TypeScript, Vite
 
 ## Deploy
-- Firebase Hosting
-
-## Data / Docs
-- pdfplumber
-- Notion, Markdown
+- Firebase Hosting, GCP, Streamlit

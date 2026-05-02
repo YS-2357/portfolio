@@ -16,8 +16,9 @@ const TRUST_SIGNALS = [
   { label: 'Top 0.8%', sub: '3rd / 389 teams · K-Digital' },
 ]
 
-const SKILLS_AI = ['Python', 'YOLOv8', 'LangChain', 'LangGraph', 'FAISS', 'Chroma', 'LLM API']
-const SKILLS_ENG = ['FastAPI', 'React', 'TypeScript', 'Firebase', 'Streamlit', 'GCP']
+const SKILLS_AI  = ['Claude', 'Codex', 'Kiro', 'LangChain', 'LangGraph']
+const SKILLS_AWS = ['Amazon Bedrock', 'Amazon Q', 'SageMaker', 'Lambda', 'EC2']
+const SKILLS_ENG = ['Python', 'FastAPI', 'React', 'TypeScript', 'Firebase']
 
 function App() {
   const [intro, setIntro] = useState('')
@@ -215,9 +216,15 @@ function App() {
             <h2 className="section-heading mb-5" style={{ color: 'var(--card-bright)' }}>Tech Stack</h2>
             <div className="space-y-4">
               <div>
-                <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: 'var(--card-muted)' }}>AI / ML</p>
+                <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: 'var(--card-muted)' }}>AI Agents</p>
                 <div className="flex flex-wrap gap-2">
                   {SKILLS_AI.map((s) => <span key={s} className="skill-tag">{s}</span>)}
+                </div>
+              </div>
+              <div>
+                <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: 'var(--card-muted)' }}>AWS</p>
+                <div className="flex flex-wrap gap-2">
+                  {SKILLS_AWS.map((s) => <span key={s} className="skill-tag">{s}</span>)}
                 </div>
               </div>
               <div>
@@ -237,7 +244,7 @@ function App() {
             </div>
             <div className="space-y-5">
               <div className="timeline-entry">
-                <p className="text-sm font-semibold mb-0.5" style={{ color: 'var(--card-bright)' }}>메가존클라우드 · AI 아키텍처 유닛 매니저</p>
+                <p className="text-sm font-semibold mb-0.5" style={{ color: 'var(--card-bright)' }}>Megazone Cloud · Manager, AI Architect Unit</p>
                 <p className="text-xs" style={{ color: 'var(--card-muted)' }}>2026.02 – 현재</p>
               </div>
               <div className="timeline-entry">
