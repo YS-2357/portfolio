@@ -6,9 +6,6 @@ import PageShell from './components/PageShell'
 import OrbitalRing from './components/OrbitalRing'
 import './App.css'
 
-const METRICS = [
-  { value: '3rd / 389', label: 'K-Digital Hackathon', sub: 'Ministry of Labor Award' },
-]
 
 const TRUST_SIGNALS = [
   { label: 'Megazone Cloud', sub: 'AI Architect Unit · Manager' },
