@@ -41,3 +41,13 @@ app/public/content/_notion/
 asset/private/
 
 .claude/
+
+# Local raw files (certs, downloads)
+raw/
+
+# Playwright session data and review screenshots
+.playwright-mcp/
+review-*.png
+
+# Tool files
+.codex

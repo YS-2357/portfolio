@@ -1,7 +1,7 @@
 # Work Experience
 
 ## 메가존클라우드 | AI 아키텍처 유닛 / 매니저 | 2026.02.09 - 현재
-- 역할 요약: AI 아키텍처 유닛 매니저로서 클라우드 기반 AI 솔루션 아키텍처 설계 및 팀 운영.
+- 역할 요약: AI 아키텍처 유닛 매니저로서 클라우드 기반 AI 솔루션 아키텍처 설계.
 - 주요 활동:
   - 자격증: AWS Certified Generative AI Developer - Professional (Beta, AIP-C01) 취득.
 
