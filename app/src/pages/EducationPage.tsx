@@ -33,18 +33,18 @@ export default function EducationPage() {
               <article key={block.heading} className="timeline-entry">
                 <div className="flex flex-wrap justify-between gap-3 mb-2">
                   <div>
-                    <h2 className="text-lg font-semibold" style={{ color: 'var(--card-bright)' }}>{block.title}</h2>
+                    <h2 className="text-xl font-semibold" style={{ color: 'var(--card-bright)' }}>{block.title}</h2>
                     {block.subtitle && (
-                      <p className="text-sm mt-0.5" style={{ color: 'var(--card-dim)' }}>{block.subtitle}</p>
+                      <p className="text-base mt-0.5" style={{ color: 'var(--card-dim)' }}>{block.subtitle}</p>
                     )}
                   </div>
                   {block.period && (
-                    <span className="text-xs font-medium shrink-0 mt-1" style={{ color: 'var(--card-muted)' }}>{block.period}</span>
+                    <span className="text-sm font-medium shrink-0 mt-1" style={{ color: 'var(--card-muted)' }}>{block.period}</span>
                   )}
                 </div>
 
                 {block.paragraphs.map((text) => (
-                  <p key={text} className="text-sm leading-relaxed mb-3" style={{ color: 'var(--card-dim)' }}>
+                  <p key={text} className="text-base leading-relaxed mb-3" style={{ color: 'var(--card-dim)' }}>
                     {text}
                   </p>
                 ))}
@@ -60,7 +60,7 @@ export default function EducationPage() {
                         {bullet.items && (
                           <ul className="mt-1.5 ml-4 space-y-1">
                             {bullet.items.map((item) => (
-                              <li key={item} className="text-xs" style={{ color: 'var(--card-muted)' }}>{item}</li>
+                              <li key={item} className="text-sm" style={{ color: 'var(--card-muted)' }}>{item}</li>
                             ))}
                           </ul>
                         )}
@@ -72,7 +72,7 @@ export default function EducationPage() {
                 {block.bullets.some((b) => b.link) && (
                   <div className="flex justify-end mt-4">
                     {block.bullets.filter((b) => b.link).map((bullet) => (
-                      <a key={bullet.link} href={bullet.link} target="_blank" rel="noreferrer" className="btn-solar text-xs px-3 py-1.5">
+                      <a key={bullet.link} href={bullet.link} target="_blank" rel="noreferrer" className="btn-solar text-sm px-3 py-2">
                         Codeit Link ↗
                       </a>
                     ))}

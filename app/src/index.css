@@ -162,7 +162,7 @@
 
   /* ── Section heading — planet underline ── */
   .section-heading {
-    @apply text-lg font-semibold tracking-tight relative pb-3;
+    @apply text-xl font-semibold tracking-tight relative pb-3;
     color: var(--card-bright);
   }
   .section-heading::after {
@@ -177,7 +177,7 @@
 
   /* ── Skill tag — dark variant ── */
   .skill-tag {
-    @apply rounded-full border px-3 py-1 text-xs font-medium;
+    @apply rounded-full border px-3 py-1.5 text-sm font-medium;
     border-color: rgba(255,255,255,0.12);
     color: var(--card-dim);
     background: rgba(255,255,255,0.04);

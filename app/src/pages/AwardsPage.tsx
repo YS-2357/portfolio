@@ -107,7 +107,7 @@ export default function AwardsPage() {
                             href={item.link}
                             target="_blank"
                             rel="noreferrer"
-                            className="btn-solar text-xs px-3 py-1.5"
+                            className="btn-solar text-sm px-3 py-2"
                           >
                             Details ↗
                           </a>

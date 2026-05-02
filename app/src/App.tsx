@@ -111,16 +111,16 @@ function App() {
             </div>
             <div className="flex flex-wrap gap-2">
               {contact.email && (
-                <a href={`mailto:${contact.email}`} className="btn-ghost text-xs px-3 py-1.5">{contact.email}</a>
+                <a href={`mailto:${contact.email}`} className="btn-ghost text-sm px-3 py-2">{contact.email}</a>
               )}
               {contact.github && (
-                <a href={contact.github} target="_blank" rel="noreferrer" className="btn-ghost text-xs px-3 py-1.5">GitHub</a>
+                <a href={contact.github} target="_blank" rel="noreferrer" className="btn-ghost text-sm px-3 py-2">GitHub</a>
               )}
               {contact.linkedin && (
-                <a href={contact.linkedin} target="_blank" rel="noreferrer" className="btn-ghost text-xs px-3 py-1.5">LinkedIn</a>
+                <a href={contact.linkedin} target="_blank" rel="noreferrer" className="btn-ghost text-sm px-3 py-2">LinkedIn</a>
               )}
               {contact.blog && (
-                <a href={contact.blog} target="_blank" rel="noreferrer" className="btn-ghost text-xs px-3 py-1.5">Velog</a>
+                <a href={contact.blog} target="_blank" rel="noreferrer" className="btn-ghost text-sm px-3 py-2">Velog</a>
               )}
             </div>
           </div>
@@ -135,13 +135,13 @@ function App() {
               >
                 YS
               </div>
-              <p className="text-sm font-semibold mb-1" style={{ color: 'var(--card-bright)' }}>AI Engineer</p>
-              <p className="text-xs mb-3" style={{ color: 'var(--card-dim)' }}>M.S. Mathematics · Korea Univ.</p>
+              <p className="text-base font-semibold mb-1" style={{ color: 'var(--card-bright)' }}>AI Engineer</p>
+              <p className="text-sm mb-3" style={{ color: 'var(--card-dim)' }}>M.S. Mathematics · Korea Univ.</p>
               <div className="space-y-2 pt-3" style={{ borderTop: '1px solid var(--card-border)' }}>
                 {TRUST_SIGNALS.map((s) => (
                   <div key={s.label}>
-                    <p className="text-xs font-semibold" style={{ color: 'var(--color-solar)' }}>{s.label}</p>
-                    <p className="text-xs" style={{ color: 'var(--card-muted)' }}>{s.sub}</p>
+                    <p className="text-sm font-semibold" style={{ color: 'var(--color-solar)' }}>{s.label}</p>
+                    <p className="text-sm" style={{ color: 'var(--card-muted)' }}>{s.sub}</p>
                   </div>
                 ))}
               </div>
@@ -154,8 +154,8 @@ function App() {
           {METRICS.map(({ value, label, sub }) => (
             <div key={label} className="stat-chip flex-1 max-w-xs">
               <div className="text-2xl font-bold mb-1" style={{ color: 'var(--color-solar)' }}>{value}</div>
-              <div className="text-xs font-semibold mb-0.5" style={{ color: 'var(--card-text)' }}>{label}</div>
-              <div className="text-xs" style={{ color: 'var(--card-muted)' }}>{sub}</div>
+              <div className="text-sm font-semibold mb-0.5" style={{ color: 'var(--card-text)' }}>{label}</div>
+              <div className="text-sm" style={{ color: 'var(--card-muted)' }}>{sub}</div>
             </div>
           ))}
         </section>
@@ -164,7 +164,7 @@ function App() {
         <section className="mb-12">
           <div className="flex items-center justify-between mb-5">
             <h2 className="section-heading">Active Project</h2>
-            <Link to="/projects" className="btn-ghost text-xs px-3 py-1.5">All Projects →</Link>
+            <Link to="/projects" className="btn-ghost text-sm px-3 py-2">All Projects →</Link>
           </div>
           {featuredProjects.map((p) => (
             <div key={p.slug} className="glass-card p-7">
@@ -175,9 +175,9 @@ function App() {
                 </span>
               </div>
               <h3 className="text-xl font-semibold mb-2" style={{ color: 'var(--card-bright)' }}>{p.title}</h3>
-              <p className="text-sm leading-relaxed mb-5" style={{ color: 'var(--card-dim)' }}>{p.cardSummary}</p>
+              <p className="text-base leading-relaxed mb-5" style={{ color: 'var(--card-dim)' }}>{p.cardSummary}</p>
               <div className="flex justify-end pt-4" style={{ borderTop: '1px solid var(--card-border)' }}>
-                <Link to={`/projects/${p.slug}`} className="btn-solar text-xs px-4 py-2">View Details →</Link>
+                <Link to={`/projects/${p.slug}`} className="btn-solar text-sm px-4 py-2">View Details →</Link>
               </div>
             </div>
           ))}
@@ -206,7 +206,7 @@ function App() {
           </div>
           <div className="mt-3 flex items-center gap-2">
             <span className="project-label">🏆</span>
-            <p className="text-xs" style={{ color: 'var(--card-dim)' }}>{awards.bootcamp}</p>
+            <p className="text-sm" style={{ color: 'var(--card-dim)' }}>{awards.bootcamp}</p>
           </div>
         </section>
 
@@ -240,16 +240,16 @@ function App() {
           <section className="glass-card p-6">
             <div className="flex items-center justify-between mb-5">
               <h2 className="section-heading" style={{ color: 'var(--card-bright)' }}>Experience</h2>
-              <Link to="/experience" className="btn-ghost text-xs px-3 py-1.5">View All →</Link>
+              <Link to="/experience" className="btn-ghost text-sm px-3 py-2">View All →</Link>
             </div>
             <div className="space-y-5">
               <div className="timeline-entry">
                 <p className="text-sm font-semibold mb-0.5" style={{ color: 'var(--card-bright)' }}>Megazone Cloud · Manager, AI Architect Unit</p>
-                <p className="text-xs" style={{ color: 'var(--card-muted)' }}>2026.02 – 현재</p>
+                <p className="text-sm" style={{ color: 'var(--card-muted)' }}>2026.02 – 현재</p>
               </div>
               <div className="timeline-entry">
                 <p className="text-sm font-semibold mb-0.5" style={{ color: 'var(--card-bright)' }}>(주)인톡 · AI Developer Intern</p>
-                <p className="text-xs" style={{ color: 'var(--card-muted)' }}>2025.11 – 2026.01</p>
+                <p className="text-sm" style={{ color: 'var(--card-muted)' }}>2025.11 – 2026.01</p>
               </div>
             </div>
           </section>
@@ -263,16 +263,16 @@ function App() {
           )}
           <div className="flex flex-wrap justify-center gap-3">
             {contact.email && (
-              <a href={`mailto:${contact.email}`} className="btn-solar text-xs px-4 py-2">Email</a>
+              <a href={`mailto:${contact.email}`} className="btn-solar text-sm px-4 py-2">Email</a>
             )}
             {contact.github && (
-              <a href={contact.github} target="_blank" rel="noreferrer" className="btn-ghost text-xs px-4 py-2">GitHub</a>
+              <a href={contact.github} target="_blank" rel="noreferrer" className="btn-ghost text-sm px-4 py-2">GitHub</a>
             )}
             {contact.linkedin && (
-              <a href={contact.linkedin} target="_blank" rel="noreferrer" className="btn-ghost text-xs px-4 py-2">LinkedIn</a>
+              <a href={contact.linkedin} target="_blank" rel="noreferrer" className="btn-ghost text-sm px-4 py-2">LinkedIn</a>
             )}
             {contact.blog && (
-              <a href={contact.blog} target="_blank" rel="noreferrer" className="btn-ghost text-xs px-4 py-2">Velog</a>
+              <a href={contact.blog} target="_blank" rel="noreferrer" className="btn-ghost text-sm px-4 py-2">Velog</a>
             )}
           </div>
         </section>

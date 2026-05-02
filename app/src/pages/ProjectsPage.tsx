@@ -31,10 +31,10 @@ export default function ProjectsPage() {
                 </div>
                 <div>
                   <h2 className="text-xl font-semibold mb-2" style={{ color: 'var(--card-bright)' }}>{p.title}</h2>
-                  <p className="text-sm leading-relaxed" style={{ color: 'var(--card-dim)' }}>{p.cardSummary}</p>
+                  <p className="text-base leading-relaxed" style={{ color: 'var(--card-dim)' }}>{p.cardSummary}</p>
                 </div>
                 <div className="mt-auto flex justify-end pt-4" style={{ borderTop: '1px solid var(--card-border)' }}>
-                  <Link to={`/projects/${p.slug}`} className="btn-solar text-xs px-4 py-2">View Details →</Link>
+                  <Link to={`/projects/${p.slug}`} className="btn-solar text-sm px-4 py-2">View Details →</Link>
                 </div>
               </div>
             ))}
@@ -45,7 +45,7 @@ export default function ProjectsPage() {
         <section>
           <div className="flex items-end justify-between gap-4 mb-4">
             <p className="eyebrow">Codeit AI Sprint 01기</p>
-            <span className="text-xs" style={{ color: 'var(--card-dim)' }}>2024.12 – 2025.07 · 팀장 3회</span>
+            <span className="text-sm" style={{ color: 'var(--card-dim)' }}>2024.12 – 2025.07 · 팀장 3회</span>
           </div>
           <div className="glass-card overflow-hidden">
             {bootcampProjects.map((p, i) => (
