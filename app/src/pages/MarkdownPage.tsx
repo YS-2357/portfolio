@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { NavLink, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { projects } from '../data/projects'
@@ -38,36 +38,9 @@ export default function MarkdownPage() {
           <p className="text-base mb-8" style={{ color: 'var(--card-dim)' }}>{meta.subtitle}</p>
         )}
 
-        <div className="tab-nav mb-10 overflow-x-auto">
-          <NavLink
-            to={`/projects/${project}`}
-            end
-            className={({ isActive }) => `tab-link${isActive ? ' active' : ''}`}
-          >
-            Infographic
-          </NavLink>
-          <NavLink
-            to={`/projects/${project}/star`}
-            end
-            className={({ isActive }) => `tab-link${isActive ? ' active' : ''}`}
-          >
-            Summary
-          </NavLink>
-          <NavLink
-            to={`/projects/${project}/report`}
-            end
-            className={({ isActive }) => `tab-link${isActive ? ' active' : ''}`}
-          >
-            Report
-          </NavLink>
-          <NavLink
-            to="/projects"
-            end
-            className={({ isActive }) => `tab-link${isActive ? ' active' : ''}`}
-          >
-            Project List
-          </NavLink>
-        </div>
+        <Link to={`/projects/${project}`} className="inline-flex items-center gap-1 text-sm mb-10" style={{ color: 'var(--card-dim)' }}>
+          ← Project Overview
+        </Link>
 
         <div className="glass-card p-8">
           <div className="prose prose-invert max-w-none prose-img:rounded-xl prose-img:border prose-img:border-white/10 prose-a:text-solar prose-headings:text-white prose-code:text-solar prose-code:bg-space-void prose-pre:bg-space-void prose-pre:border prose-pre:border-white/10">
