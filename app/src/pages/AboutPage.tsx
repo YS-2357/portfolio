@@ -18,7 +18,7 @@ export default function AboutPage() {
   const military    = blocks.find((b) => b.title.includes('병역'))
 
   return (
-    <PageShell planet="earth">
+    <PageShell planet="jupiter">
       <OrbitalRing size={450} opacity={0.07} className="absolute top-16 right-0" style={{ position: 'absolute' }} />
 
       <div className="relative z-10 max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-24">

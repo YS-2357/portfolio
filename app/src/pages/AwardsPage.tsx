@@ -70,7 +70,7 @@ export default function AwardsPage() {
   }, [])
 
   return (
-    <PageShell planet="venus">
+    <PageShell planet="mars">
       <OrbitalRing size={320} opacity={0.07} rotate={15} className="absolute bottom-12 left-0" style={{ position: 'absolute' }} />
 
       <div className="relative z-10 max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-24">

@@ -14,7 +14,7 @@ export default function ExperiencePage() {
   }, [])
 
   return (
-    <PageShell planet="mars">
+    <PageShell planet="venus">
       <OrbitalRing size={350} opacity={0.06} className="absolute bottom-16 left-0" style={{ position: 'absolute' }} />
 
       <div className="relative z-10 max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-24">
