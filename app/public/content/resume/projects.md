@@ -27,7 +27,7 @@
 
 ## RFP 문서 요약·질의응답 RAG 서비스 | 2025.05 – 2025.06
 - 형태: 팀 프로젝트(팀장)
-- 기술: Python, Streamlit, FastAPI, LangChain, FAISS, Chroma, pdfplumber
+- 기술: Python, Streamlit, FastAPI, LangChain
 - GitHub: https://github.com/gyurili/2025-RAG-Project
 - 요약: 정부·기업 RFP 문서 대상 의미 기반 요약/QA 자동화 시스템 구현
 - 성과:

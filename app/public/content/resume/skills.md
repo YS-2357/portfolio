@@ -1,30 +1,25 @@
 # Skills
 
-## AI Coding Agents
+## AI & Agents
+- Amazon Bedrock
+- Strands SDK
+- Amazon AgentCore
+- LangChain
+- LangGraph
+
+## AI Dev Tools
 - Claude (Anthropic)
-- GitHub Copilot / Codex (OpenAI)
+- Codex (OpenAI)
 - Kiro (AWS)
 
-## AWS
-- Amazon Bedrock
-- Amazon Q Developer
-- Amazon SageMaker
-- AWS Lambda, EC2, S3
+## Cloud & Infra
+- AWS — EC2, Lambda, RDS, S3, CloudFront
+- GCP
+- Firebase
 
-## LLM / RAG
-- LangChain, LangGraph
-- Vector Store: Chroma, FAISS
-- LLM API: OpenAI, Anthropic, Gemini, Perplexity, Mistral, Groq, Cohere, DeepSeek
-
-## AI / ML
-- YOLOv8, Faster R-CNN
-- COCO Annotation
-
-## Backend
-- Python, FastAPI
-
-## Frontend
-- React, TypeScript, Vite
-
-## Deploy
-- Firebase Hosting, GCP, Streamlit
+## Engineering
+- Python
+- FastAPI
+- Streamlit
+- React
+- TypeScript
