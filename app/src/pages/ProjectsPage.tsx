@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
-import { featuredProjects, bootcampProjects } from '../data/projects'
+import { projects } from '../data/projects'
 import PageShell from '../components/PageShell'
 import OrbitalRing from '../components/OrbitalRing'
 
 export default function ProjectsPage() {
   return (
-    <PageShell planet="jupiter">
+    <PageShell planet="mercury">
       <OrbitalRing size={500} opacity={0.06} rotate={20} className="absolute top-16 right-0" style={{ position: 'absolute' }} />
 
       <div className="relative z-10 max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-24">
@@ -17,30 +17,6 @@ export default function ProjectsPage() {
           Production systems and research projects in AI engineering.
         </p>
 
-        {/* Featured — active personal project */}
-        <section className="mb-14">
-          <p className="eyebrow mb-4">Active</p>
-          <div className="grid grid-cols-1 gap-6">
-            {featuredProjects.map((p) => (
-              <div key={p.slug} className="glass-card p-7 flex flex-col gap-4">
-                <div className="flex items-start gap-3 flex-wrap">
-                  <span className="project-label">{p.label}</span>
-                  <span className="text-xs px-2 py-0.5 rounded-full" style={{ background: 'rgba(96,165,250,0.15)', color: 'var(--color-earth)', border: '1px solid rgba(96,165,250,0.25)' }}>
-                    ongoing
-                  </span>
-                </div>
-                <div>
-                  <h2 className="text-xl font-semibold mb-2" style={{ color: 'var(--card-bright)' }}>{p.title}</h2>
-                  <p className="text-base leading-relaxed" style={{ color: 'var(--card-dim)' }}>{p.cardSummary}</p>
-                </div>
-                <div className="mt-auto flex justify-end pt-4" style={{ borderTop: '1px solid var(--card-border)' }}>
-                  <Link to={`/projects/${p.slug}`} className="btn-solar text-sm px-4 py-2">View Details →</Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* Bootcamp — Codeit Sprint projects */}
         <section>
           <div className="flex items-end justify-between gap-4 mb-4">
@@ -48,7 +24,7 @@ export default function ProjectsPage() {
             <span className="text-sm" style={{ color: 'var(--card-dim)' }}>2024.12 – 2025.07 · 팀장 3회</span>
           </div>
           <div className="glass-card overflow-hidden">
-            {bootcampProjects.map((p, i) => (
+            {projects.map((p, i) => (
               <div
                 key={p.slug}
                 className="flex items-center justify-between gap-4 px-6 py-5 flex-wrap"

@@ -13,9 +13,12 @@ const TRUST_SIGNALS = [
   { label: 'Top 0.8%', sub: '3rd · 7th K-Digital Training Hackathon' },
 ]
 
-const SKILLS_AI  = ['Claude', 'Codex', 'Kiro', 'LangChain', 'LangGraph']
-const SKILLS_AWS = ['Amazon Bedrock', 'Amazon Q', 'SageMaker', 'Lambda', 'EC2']
-const SKILLS_ENG = ['Python', 'FastAPI', 'React', 'TypeScript', 'Firebase']
+const SKILL_CATEGORIES = [
+  { label: 'AI & Agents',   skills: ['Amazon Bedrock', 'Strands SDK', 'AgentCore', 'LangChain', 'LangGraph'] },
+  { label: 'AI Dev Tools',  skills: ['Claude', 'Codex', 'Kiro'] },
+  { label: 'Cloud & Infra', skills: ['AWS', 'GCP', 'Firebase'] },
+  { label: 'Engineering',   skills: ['Python', 'FastAPI', 'Streamlit', 'React', 'TypeScript'] },
+]
 
 function App() {
   const [intro, setIntro] = useState('')
@@ -25,10 +28,10 @@ function App() {
   })
   const [contact, setContact] = useState({
     email: '',
+    companyEmail: '',
     github: '',
     blog: '',
     linkedin: '',
-    phone: '',
   })
 
   const parseAwardSummary = (text: string) => {
@@ -74,11 +77,11 @@ function App() {
           if (!rawKey || rest.length === 0) return
           const value = rest.join(':').trim()
           const key = rawKey.toLowerCase()
-          if (key.includes('email') || key.includes('e-mail')) next.email = value
+          if (key.includes('company')) next.companyEmail = value
+          else if (key.includes('email') || key.includes('e-mail')) next.email = value
           if (key.includes('github')) next.github = value
           if (key.includes('linkedin')) next.linkedin = value
           if (key.includes('velog') || key.includes('blog')) next.blog = value
-          if (key.includes('phone')) next.phone = value
         })
         setContact(next)
       })
@@ -160,19 +163,19 @@ function App() {
           </div>
         </section>
 
-        {/* ── Featured Project (Compare-AI) ── */}
+        {/* ── Featured Project (GEOPage) ── */}
         <section className="mb-12">
           <div className="flex items-center justify-between mb-5">
-            <h2 className="section-heading">Active Project</h2>
+            <h2 className="section-heading">Featured Project</h2>
             <Link to="/projects" className="btn-ghost text-sm px-3 py-2">All Projects →</Link>
           </div>
           {featuredProjects.map((p) => (
             <div key={p.slug} className="glass-card p-7">
               <div className="flex items-start gap-3 flex-wrap mb-4">
                 <span className="project-label">{p.label}</span>
-                <span className="text-xs px-2 py-0.5 rounded-full" style={{ background: 'rgba(96,165,250,0.15)', color: 'var(--color-earth)', border: '1px solid rgba(96,165,250,0.25)' }}>
-                  ongoing
-                </span>
+                {p.primaryMetric && (
+                  <span className="stat-chip">{p.primaryMetric} <span style={{ opacity: 0.6 }}>{p.primaryMetricLabel}</span></span>
+                )}
               </div>
               <h3 className="text-xl font-semibold mb-2" style={{ color: 'var(--card-bright)' }}>{p.title}</h3>
               <p className="text-base leading-relaxed mb-5" style={{ color: 'var(--card-dim)' }}>{p.cardSummary}</p>
@@ -215,24 +218,14 @@ function App() {
           <section className="glass-card p-6">
             <h2 className="section-heading mb-5" style={{ color: 'var(--card-bright)' }}>Tech Stack</h2>
             <div className="space-y-4">
-              <div>
-                <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: 'var(--card-muted)' }}>AI Agents</p>
-                <div className="flex flex-wrap gap-2">
-                  {SKILLS_AI.map((s) => <span key={s} className="skill-tag">{s}</span>)}
+              {SKILL_CATEGORIES.map(({ label, skills }) => (
+                <div key={label}>
+                  <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: 'var(--card-muted)' }}>{label}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {skills.map((s) => <span key={s} className="skill-tag">{s}</span>)}
+                  </div>
                 </div>
-              </div>
-              <div>
-                <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: 'var(--card-muted)' }}>AWS</p>
-                <div className="flex flex-wrap gap-2">
-                  {SKILLS_AWS.map((s) => <span key={s} className="skill-tag">{s}</span>)}
-                </div>
-              </div>
-              <div>
-                <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: 'var(--card-muted)' }}>Engineering</p>
-                <div className="flex flex-wrap gap-2">
-                  {SKILLS_ENG.map((s) => <span key={s} className="skill-tag">{s}</span>)}
-                </div>
-              </div>
+              ))}
             </div>
           </section>
 
@@ -258,12 +251,12 @@ function App() {
         {/* ── Contact ── */}
         <section className="glass-card p-6 text-center">
           <p className="eyebrow mb-3">Contact</p>
-          {contact.phone && (
-            <p className="text-sm mb-5" style={{ color: 'var(--card-dim)' }}>{contact.phone}</p>
-          )}
           <div className="flex flex-wrap justify-center gap-3">
             {contact.email && (
-              <a href={`mailto:${contact.email}`} className="btn-solar text-sm px-4 py-2">Email</a>
+              <a href={`mailto:${contact.email}`} className="btn-solar text-sm px-4 py-2">Personal Email</a>
+            )}
+            {contact.companyEmail && (
+              <a href={`mailto:${contact.companyEmail}`} className="btn-solar text-sm px-4 py-2">Work Email</a>
             )}
             {contact.github && (
               <a href={contact.github} target="_blank" rel="noreferrer" className="btn-ghost text-sm px-4 py-2">GitHub</a>
