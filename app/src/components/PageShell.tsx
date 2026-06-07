@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 import { SYSTEMS, type SystemName } from '../data/numbers'
-import CommutativeDiagram from './CommutativeDiagram'
+import EquationBackdrop from './EquationBackdrop'
 import ChainBar from './ChainBar'
 
 type Props = {
@@ -21,9 +21,9 @@ export default function PageShell({ children, system = 'overview', className = '
         '--accent-glow': s.glow,
       } as React.CSSProperties}
     >
-      {/* Commutative-diagram overlay behind hero */}
-      <div className="absolute top-0 left-0 right-0 h-[480px] overflow-hidden pointer-events-none">
-        <CommutativeDiagram />
+      {/* Famous-equations overlay — tiled down the full page */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <EquationBackdrop />
       </div>
 
       {/* Accent ambient glow — top-right */}
