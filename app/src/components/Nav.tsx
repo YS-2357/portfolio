@@ -1,12 +1,12 @@
 import { NavLink } from 'react-router-dom'
 
 const NAV_LINKS = [
-  { to: '/',           label: 'Home',       end: true  },
-  { to: '/projects',   label: 'Projects',   end: false },
-  { to: '/experience', label: 'Experience', end: false },
-  { to: '/education',  label: 'Education',  end: false },
-  { to: '/awards',     label: 'Awards',     end: false },
-  { to: '/about',      label: 'About',      end: false },
+  { to: '/',           glyph: '•', label: 'Home',       end: true  },
+  { to: '/about',      glyph: 'ℕ', label: 'About',      end: false },
+  { to: '/education',  glyph: 'ℤ', label: 'Education',  end: false },
+  { to: '/experience', glyph: 'ℚ', label: 'Experience', end: false },
+  { to: '/awards',     glyph: 'ℝ', label: 'Awards',     end: false },
+  { to: '/projects',   glyph: 'ℂ', label: 'Projects',   end: false },
 ]
 
 export default function Nav() {
@@ -26,13 +26,14 @@ export default function Nav() {
       </NavLink>
 
       <ul className="hidden sm:flex items-center gap-4 lg:gap-7 list-none m-0 p-0">
-        {NAV_LINKS.map(({ to, label, end }) => (
+        {NAV_LINKS.map(({ to, glyph, label, end }) => (
           <li key={to}>
             <NavLink
               to={to}
               end={end}
-              className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
+              className={({ isActive }) => `nav-link inline-flex items-center gap-1.5${isActive ? ' active' : ''}`}
             >
+              <span className="font-math" style={{ fontSize: '0.95em', opacity: 0.85 }}>{glyph}</span>
               {label}
             </NavLink>
           </li>

@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Navigate, Route, Routes, useParams } from 'react-router-dom'
+import 'katex/dist/katex.min.css'
 import './index.css'
 import Nav from './components/Nav'
 import App from './App.tsx'

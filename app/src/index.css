@@ -1,35 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ── Design tokens ── */
+/* ── Design tokens — chalkboard ── */
 :root {
-  /* Deep space page */
-  --page-bg:     #070c18;
-  --page-text:   #e6f0ff;
-  --page-muted:  #9ca3af;
-  --page-border: rgba(255,255,255,0.10);
+  /* Blackboard page */
+  --page-bg:     #0a0d12;
+  --page-text:   #e8e8df;
+  --page-muted:  #8a909a;
+  --page-border: rgba(245,245,239,0.10);
 
-  /* Card interiors (slightly lighter than void) */
-  --card-bg:     #0f1629;
-  --card-bright: #ffffff;
-  --card-text:   #e6f0ff;
-  --card-dim:    #9ca3af;
+  /* Card interiors (slightly lifted slate) */
+  --card-bg:     #11151d;
+  --card-bright: #f5f5ef;
+  --card-text:   #dcdfe4;
+  --card-dim:    #9aa0a8;
   --card-muted:  #6b7280;
-  --card-border: rgba(255,255,255,0.10);
+  --card-border: rgba(245,245,239,0.10);
 
-  /* Planet accent — overridden per page via PageShell */
-  --planet-color: #f2c14e;
-  --planet-glow:  rgba(242,193,78,0.12);
+  /* Per-page accent — overridden per page via PageShell (chalk colour of the number system) */
+  --accent:      #f5f5ef;
+  --accent-glow: rgba(245,245,239,0.12);
 
-  /* Legacy aliases kept for compatibility */
-  --color-solar:   #f2c14e;
-  --color-mercury: #94a3b8;
-  --color-earth:   #60a5fa;
-  --color-mars:    #f87171;
-  --color-jupiter: #fb923c;
+  /* Chalk-amber used for the primary action button (consistent across pages) */
+  --chalk-amber: #e8c87a;
+  --color-solar: #e8c87a; /* legacy alias → chalk-amber */
 
   --nav-height: 64px;
 }
@@ -48,11 +45,12 @@
     color: var(--page-text);
     font-family: 'Space Grotesk', 'Noto Sans KR', 'Pretendard', system-ui, sans-serif;
     min-height: 100vh;
-    /* Deep space background with star field */
+    /* Integer-lattice graph paper — faint grid + brighter lattice points */
     background-color: var(--page-bg);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Ccircle cx='23' cy='47' r='1.1' fill='rgba(255,255,255,0.55)'/%3E%3Ccircle cx='87' cy='12' r='0.7' fill='rgba(255,255,255,0.35)'/%3E%3Ccircle cx='156' cy='89' r='1.3' fill='rgba(255,255,255,0.45)'/%3E%3Ccircle cx='231' cy='34' r='0.9' fill='rgba(255,255,255,0.4)'/%3E%3Ccircle cx='312' cy='67' r='1.2' fill='rgba(255,255,255,0.5)'/%3E%3Ccircle cx='378' cy='23' r='0.6' fill='rgba(255,255,255,0.3)'/%3E%3Ccircle cx='45' cy='134' r='0.8' fill='rgba(255,255,255,0.35)'/%3E%3Ccircle cx='123' cy='178' r='1.4' fill='rgba(255,255,255,0.55)'/%3E%3Ccircle cx='267' cy='145' r='0.7' fill='rgba(255,255,255,0.4)'/%3E%3Ccircle cx='345' cy='198' r='1.1' fill='rgba(255,255,255,0.45)'/%3E%3Ccircle cx='67' cy='234' r='0.9' fill='rgba(255,255,255,0.35)'/%3E%3Ccircle cx='189' cy='267' r='1.2' fill='rgba(255,255,255,0.5)'/%3E%3Ccircle cx='289' cy='312' r='0.6' fill='rgba(255,255,255,0.3)'/%3E%3Ccircle cx='356' cy='289' r='1.5' fill='rgba(255,255,255,0.55)'/%3E%3Ccircle cx='12' cy='356' r='1.0' fill='rgba(255,255,255,0.4)'/%3E%3Ccircle cx='134' cy='345' r='0.7' fill='rgba(255,255,255,0.35)'/%3E%3Ccircle cx='234' cy='378' r='1.2' fill='rgba(255,255,255,0.45)'/%3E%3Ccircle cx='389' cy='367' r='0.8' fill='rgba(255,255,255,0.35)'/%3E%3Ccircle cx='78' cy='301' r='0.5' fill='rgba(255,255,255,0.25)'/%3E%3Ccircle cx='199' cy='156' r='1.0' fill='rgba(255,255,255,0.4)'/%3E%3Ccircle cx='321' cy='234' r='0.8' fill='rgba(255,255,255,0.3)'/%3E%3Ccircle cx='167' cy='23' r='1.1' fill='rgba(255,255,255,0.45)'/%3E%3Ccircle cx='44' cy='67' r='0.6' fill='rgba(255,255,255,0.3)'/%3E%3Ccircle cx='289' cy='189' r='0.9' fill='rgba(255,255,255,0.35)'/%3E%3C/svg%3E");
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cg fill='none' stroke='rgba(245,245,239,0.035)' stroke-width='0.6'%3E%3Cpath d='M48 0H0V48'/%3E%3C/g%3E%3Ccircle cx='0' cy='0' r='0.9' fill='rgba(245,245,239,0.08)'/%3E%3C/svg%3E");
     background-repeat: repeat;
-    background-size: 400px 400px;
+    background-size: 48px 48px;
   }
 
   a { color: inherit; text-decoration: none; }
@@ -63,25 +61,33 @@
   }
 
   ::selection {
-    background-color: rgba(242,193,78,0.3);
+    background-color: rgba(245,245,239,0.22);
     color: #fff;
   }
 
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: var(--page-bg); }
-  ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 3px; }
-  ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.22); }
+  ::-webkit-scrollbar-thumb { background: rgba(245,245,239,0.12); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(245,245,239,0.22); }
 }
 
 @layer components {
 
-  /* ── Space card — dark float with clean white border + planet nebula glow ── */
+  /* ── Large blackboard-bold page anchor (ℕ ℤ ℚ ℝ ℂ) ── */
+  .glyph {
+    font-family: 'STIX Two Math', 'STIX Two Text', 'Latin Modern Math', serif;
+    color: var(--accent);
+    line-height: 0.9;
+    text-shadow: 0 0 32px var(--accent-glow);
+  }
+
+  /* ── Blackboard card — slate float with chalk border + accent corner glow ── */
   .glass-card {
     @apply rounded-2xl;
     position: relative;
     overflow: hidden;
     background: var(--card-bg);
-    border: 1px solid rgba(255,255,255,0.10);
+    border: 1px solid var(--card-border);
     box-shadow: 0 2px 20px rgba(0,0,0,0.5);
     transition: box-shadow 0.2s ease, border-color 0.2s ease;
   }
@@ -90,27 +96,27 @@
     position: absolute;
     top: -48px; right: -48px;
     width: 180px; height: 180px;
-    background: radial-gradient(circle, var(--planet-glow, rgba(242,193,78,0.12)) 0%, transparent 70%);
+    background: radial-gradient(circle, var(--accent-glow, rgba(245,245,239,0.12)) 0%, transparent 70%);
     pointer-events: none;
     z-index: 0;
   }
   .glass-card > * { position: relative; z-index: 1; }
   .glass-card:hover {
-    border-color: rgba(255,255,255,0.22);
+    border-color: rgba(245,245,239,0.22);
     box-shadow: 0 8px 40px rgba(0,0,0,0.7);
   }
 
-  /* ── Eyebrow — driven by planet color ── */
+  /* ── Eyebrow — driven by accent ── */
   .eyebrow {
     @apply text-xs font-semibold tracking-widest uppercase;
-    color: var(--planet-color);
+    color: var(--accent);
   }
 
   /* ── Stat chip ── */
   .stat-chip {
     @apply rounded-xl px-4 py-3 text-center;
     background: var(--card-bg);
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid rgba(245,245,239,0.08);
     position: relative;
     overflow: hidden;
   }
@@ -119,34 +125,34 @@
     position: absolute;
     top: -40px; right: -40px;
     width: 120px; height: 120px;
-    background: radial-gradient(circle, var(--planet-glow, rgba(242,193,78,0.12)) 0%, transparent 70%);
+    background: radial-gradient(circle, var(--accent-glow, rgba(245,245,239,0.12)) 0%, transparent 70%);
     pointer-events: none;
   }
   .stat-chip > * { position: relative; z-index: 1; }
 
-  /* ── Solar button (sun — consistent across all pages) ── */
+  /* ── Primary (chalk-amber) button — consistent across all pages ── */
   .btn-solar {
     @apply inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold cursor-pointer;
-    background: var(--color-solar);
-    color: #070c18;
+    background: var(--chalk-amber);
+    color: #0a0d12;
     transition: box-shadow 0.2s ease, transform 0.15s ease;
   }
   .btn-solar:hover {
-    box-shadow: 0 0 24px rgba(242,193,78,0.45);
+    box-shadow: 0 0 24px rgba(232,200,122,0.45);
     transform: translateY(-1px);
   }
 
-  /* ── Ghost button — dark page variant ── */
+  /* ── Ghost button — chalk outline that adopts the page accent on hover ── */
   .btn-ghost {
     @apply inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-sm font-medium cursor-pointer;
-    border-color: rgba(255,255,255,0.15);
+    border-color: rgba(245,245,239,0.15);
     color: var(--card-dim);
     background: transparent;
     transition: border-color 0.2s ease, color 0.2s ease;
   }
   .btn-ghost:hover {
-    border-color: var(--planet-color);
-    color: var(--planet-color);
+    border-color: var(--accent);
+    color: var(--accent);
   }
 
   /* ── Nav link ── */
@@ -156,11 +162,11 @@
   }
   .nav-link:hover { color: var(--card-bright); }
   .nav-link.active {
-    color: var(--planet-color);
+    color: var(--accent);
     font-weight: 600;
   }
 
-  /* ── Section heading — planet underline ── */
+  /* ── Section heading — accent underline ── */
   .section-heading {
     @apply text-xl font-semibold tracking-tight relative pb-3;
     color: var(--card-bright);
@@ -170,40 +176,40 @@
     position: absolute;
     left: 0; bottom: 0;
     width: 32px; height: 2px;
-    background: var(--planet-color);
+    background: var(--accent);
     border-radius: 1px;
-    box-shadow: 0 0 6px var(--planet-glow, rgba(242,193,78,0.4));
+    box-shadow: 0 0 6px var(--accent-glow, rgba(245,245,239,0.4));
   }
 
-  /* ── Skill tag — dark variant ── */
+  /* ── Skill tag ── */
   .skill-tag {
     @apply rounded-full border px-3 py-1.5 text-sm font-medium;
-    border-color: rgba(255,255,255,0.12);
+    border-color: rgba(245,245,239,0.12);
     color: var(--card-dim);
-    background: rgba(255,255,255,0.04);
+    background: rgba(245,245,239,0.04);
     transition: border-color 0.15s ease, color 0.15s ease;
   }
   .skill-tag:hover {
-    border-color: var(--planet-color);
-    color: var(--planet-color);
+    border-color: var(--accent);
+    color: var(--accent);
   }
 
   /* ── Project label badge ── */
   .project-label {
     @apply rounded-full px-2.5 py-0.5 text-xs font-bold tracking-wide uppercase;
-    background: rgba(242,193,78,0.12);
-    color: var(--color-solar);
-    border: 1px solid rgba(242,193,78,0.25);
+    background: var(--accent-glow, rgba(245,245,239,0.12));
+    color: var(--accent);
+    border: 1px solid var(--accent-glow, rgba(245,245,239,0.25));
   }
 
-  /* ── Timeline entry — planet-colored dot + line ── */
+  /* ── Timeline entry — accent dot + line ── */
   .timeline-entry { @apply relative pl-6; }
   .timeline-entry::before {
     content: '';
     position: absolute;
     left: 0; top: 10px; bottom: 0;
     width: 1px;
-    background: linear-gradient(to bottom, var(--planet-color), transparent);
+    background: linear-gradient(to bottom, var(--accent), transparent);
   }
   .timeline-entry::after {
     content: '';
@@ -211,15 +217,15 @@
     left: -4px; top: 10px;
     width: 9px; height: 9px;
     border-radius: 50%;
-    background: var(--planet-color);
-    box-shadow: 0 0 10px var(--planet-glow, rgba(242,193,78,0.5));
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent-glow, rgba(245,245,239,0.5));
   }
 
   /* ── Tab nav ── */
   .tab-nav {
     @apply flex gap-1 p-1 rounded-xl;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(245,245,239,0.06);
+    border: 1px solid rgba(245,245,239,0.08);
   }
   .tab-link {
     @apply px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-150;
@@ -227,9 +233,18 @@
   }
   .tab-link:hover { color: var(--card-bright); }
   .tab-link.active {
-    background: rgba(255,255,255,0.08);
-    color: var(--planet-color);
+    background: rgba(245,245,239,0.08);
+    color: var(--accent);
     font-weight: 600;
-    box-shadow: 0 0 8px var(--planet-glow, rgba(242,193,78,0.2));
+    box-shadow: 0 0 8px var(--accent-glow, rgba(245,245,239,0.2));
   }
+}
+
+/* ── KaTeX on dark background ── */
+.katex { color: var(--card-bright); font-size: 1.05em; }
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.4rem 0;
+  margin: 1rem 0;
 }

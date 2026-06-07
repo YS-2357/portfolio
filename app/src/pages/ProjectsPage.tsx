@@ -5,16 +5,21 @@ import OrbitalRing from '../components/OrbitalRing'
 
 export default function ProjectsPage() {
   return (
-    <PageShell planet="mercury">
+    <PageShell system="complex">
       <OrbitalRing size={500} opacity={0.06} rotate={20} className="absolute top-16 right-0" style={{ position: 'absolute' }} />
 
       <div className="relative z-10 max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-24">
-        <p className="eyebrow mb-3">Observatory</p>
-        <h1 className="text-4xl md:text-5xl font-bold mb-2" style={{ color: 'var(--card-bright)', letterSpacing: '-0.03em' }}>
-          Projects
-        </h1>
-        <p className="text-base mb-14" style={{ color: 'var(--card-dim)' }}>
-          Production systems and research projects in AI engineering.
+        <div className="flex items-center gap-5 mb-3">
+          <span className="glyph text-7xl md:text-8xl">ℂ</span>
+          <div>
+            <p className="eyebrow mb-2">Complex numbers · Projects</p>
+            <h1 className="text-4xl md:text-5xl font-bold" style={{ color: 'var(--card-bright)', letterSpacing: '-0.03em' }}>
+              Projects
+            </h1>
+          </div>
+        </div>
+        <p className="text-base mb-14 max-w-2xl" style={{ color: 'var(--card-dim)' }}>
+          ℂ — 대수적으로 닫힌 곳. 모든 방정식이 해를 갖듯, 문제를 끝까지 풀어낸 결과물.
         </p>
 
         {/* Bootcamp — Codeit Sprint projects */}
@@ -42,7 +47,7 @@ export default function ProjectsPage() {
             ))}
           </div>
           <div className="mt-3 px-1">
-            <span className="text-xs font-medium" style={{ color: 'var(--color-solar)' }}>
+            <span className="text-xs font-medium" style={{ color: 'var(--accent)' }}>
               🏆 제7회 K-디지털 해커톤 고용노동부 장관상 — 전체 389팀 중 3등 (GEOPage)
             </span>
           </div>

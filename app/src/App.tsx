@@ -89,17 +89,21 @@ function App() {
   }, [])
 
   return (
-    <PageShell planet="sun">
+    <PageShell system="overview">
       <div className="relative z-10 max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24">
 
         {/* ── Hero ── */}
         <section className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12 lg:gap-16 items-start mb-14">
           <div>
-            <p className="eyebrow mb-4">AI Engineer · AWS GenAI Professional</p>
+            <p className="eyebrow mb-4">AI Engineer · M.S. Mathematics</p>
             <h1 className="text-5xl md:text-6xl font-bold mb-2" style={{ color: 'var(--card-bright)', letterSpacing: '-0.03em' }}>
               Young Sun Joung
             </h1>
-            <p className="text-2xl font-medium mb-5" style={{ color: 'var(--color-solar)' }}>정영선</p>
+            <p className="text-2xl font-medium mb-4" style={{ color: 'var(--color-solar)' }}>정영선</p>
+            {/* The construction chain — from counting to a closed field */}
+            <p className="font-math text-2xl md:text-3xl mb-5 tracking-wide" style={{ color: 'var(--card-bright)' }}>
+              ℕ <span style={{ color: 'var(--card-muted)' }}>⊂</span> ℤ <span style={{ color: 'var(--card-muted)' }}>⊂</span> ℚ <span style={{ color: 'var(--card-muted)' }}>⊂</span> ℝ <span style={{ color: 'var(--card-muted)' }}>⊂</span> ℂ
+            </p>
             {intro && (
               <p className="text-base leading-relaxed mb-8 max-w-lg" style={{ color: 'var(--card-dim)' }}>
                 {intro}
@@ -131,7 +135,7 @@ function App() {
             <div className="glass-card p-7 text-center animate-float w-full max-w-[260px] relative z-10">
               <div
                 className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl font-bold"
-                style={{ background: 'rgba(242,193,78,0.15)', color: 'var(--color-solar)', border: '1px solid rgba(242,193,78,0.3)' }}
+                style={{ background: 'rgba(232,200,122,0.15)', color: 'var(--color-solar)', border: '1px solid rgba(232,200,122,0.3)' }}
               >
                 YS
               </div>

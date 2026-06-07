@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import remarkMath from 'remark-math'
+import rehypeKatex from 'rehype-katex'
 import { projects } from '../data/projects'
 import { fetchText } from '../shared/content'
 import PageShell from '../components/PageShell'
@@ -33,7 +35,7 @@ export default function ProjectIntroPage() {
   }, [meta.contentBasePath])
 
   return (
-    <PageShell planet="mercury">
+    <PageShell system="algebraic">
       <OrbitalRing
         size={400}
         opacity={0.04}
@@ -46,7 +48,7 @@ export default function ProjectIntroPage() {
           ← All Projects
         </Link>
 
-        <p className="eyebrow mb-3">Project</p>
+        <p className="eyebrow mb-3"><span className="font-math">𝒪</span><sub>K</sub> · Project</p>
         <h1 className="text-4xl md:text-5xl font-bold mb-2" style={{ color: 'var(--card-bright)', letterSpacing: '-0.03em' }}>
           {meta.title}
         </h1>
@@ -67,8 +69,8 @@ export default function ProjectIntroPage() {
         </div>
 
         <div className="glass-card p-8">
-          <div className="prose prose-invert max-w-none prose-img:rounded-xl prose-img:border prose-img:border-white/10 prose-a:text-solar prose-headings:text-white prose-code:text-solar prose-code:bg-space-void prose-pre:bg-space-void prose-pre:border prose-pre:border-white/10">
-            <ReactMarkdown remarkPlugins={[remarkGfm]} components={{ h1: () => null }}>
+          <div className="prose prose-invert max-w-none prose-img:rounded-xl prose-img:border prose-img:border-white/10 prose-a:text-[color:var(--accent)] prose-headings:text-white prose-code:text-[color:var(--accent)] prose-code:bg-space-void prose-pre:bg-space-void prose-pre:border prose-pre:border-white/10">
+            <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]} components={{ h1: () => null }}>
               {starContent || '콘텐츠를 준비 중입니다.'}
             </ReactMarkdown>
           </div>

@@ -14,14 +14,22 @@ export default function EducationPage() {
   }, [])
 
   return (
-    <PageShell planet="earth">
+    <PageShell system="integer">
       <OrbitalRing size={350} opacity={0.06} className="absolute bottom-16 left-0" style={{ position: 'absolute' }} />
 
       <div className="relative z-10 max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-24">
-        <p className="eyebrow mb-3">Academic</p>
-        <h1 className="text-4xl md:text-5xl font-bold mb-12" style={{ color: 'var(--card-bright)', letterSpacing: '-0.03em' }}>
-          Education
-        </h1>
+        <div className="flex items-center gap-5 mb-3">
+          <span className="glyph text-7xl md:text-8xl">ℤ</span>
+          <div>
+            <p className="eyebrow mb-2">Integers · Education</p>
+            <h1 className="text-4xl md:text-5xl font-bold" style={{ color: 'var(--card-bright)', letterSpacing: '-0.03em' }}>
+              Education
+            </h1>
+          </div>
+        </div>
+        <p className="text-base mb-12 max-w-2xl" style={{ color: 'var(--card-dim)' }}>
+          ℤ — ℕ에 뺄셈을 더해 완성한 토대. 성취와 시행착오(양·음)를 모두 품은 배움의 자취.
+        </p>
 
         {blocks.length === 0 ? (
           <div className="glass-card p-8">

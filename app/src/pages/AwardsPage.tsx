@@ -70,14 +70,22 @@ export default function AwardsPage() {
   }, [])
 
   return (
-    <PageShell planet="mars">
+    <PageShell system="real">
       <OrbitalRing size={320} opacity={0.07} rotate={15} className="absolute bottom-12 left-0" style={{ position: 'absolute' }} />
 
       <div className="relative z-10 max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-24">
-        <p className="eyebrow mb-3">Recognition</p>
-        <h1 className="text-4xl md:text-5xl font-bold mb-12" style={{ color: 'var(--card-bright)', letterSpacing: '-0.03em' }}>
-          Awards
-        </h1>
+        <div className="flex items-center gap-5 mb-3">
+          <span className="glyph text-7xl md:text-8xl">ℝ</span>
+          <div>
+            <p className="eyebrow mb-2">Reals · Awards</p>
+            <h1 className="text-4xl md:text-5xl font-bold" style={{ color: 'var(--card-bright)', letterSpacing: '-0.03em' }}>
+              Awards
+            </h1>
+          </div>
+        </div>
+        <p className="text-base mb-12 max-w-2xl" style={{ color: 'var(--card-dim)' }}>
+          ℝ — ℚ의 빈틈을 메운 완비된 연속체. 시간 위에 끊김 없이 누적되어 온 성취의 자취.
+        </p>
 
         {sections.length === 0 ? (
           <div className="glass-card p-8">
