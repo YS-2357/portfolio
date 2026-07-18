@@ -1,1 +1,1 @@
-수학 연구 10년의 분석력으로 AI·Cloud 아키텍처를 설계하는 엔지니어입니다.
+수학을 10년 연구했고, 지금은 AI·Cloud 아키텍처를 설계하는 Forward Deployed Engineer(FDE)입니다.
