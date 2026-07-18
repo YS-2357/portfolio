@@ -22,6 +22,32 @@ export default function ProjectsPage() {
           ℂ — 대수적으로 닫힌 곳. 모든 방정식이 해를 갖듯, 문제를 끝까지 풀어낸 결과물.
         </p>
 
+        {/* Side projects */}
+        <section className="mb-14">
+          <div className="flex items-end justify-between gap-4 mb-4">
+            <p className="eyebrow">Side Projects</p>
+            <span className="text-sm" style={{ color: 'var(--card-dim)' }}>2026 · 개인</span>
+          </div>
+          <div className="glass-card overflow-hidden">
+            {projects.filter((p) => p.group === 'side').map((p, i) => (
+              <div
+                key={p.slug}
+                className="flex items-center justify-between gap-4 px-6 py-5 flex-wrap"
+                style={i > 0 ? { borderTop: '1px solid var(--card-border)' } : {}}
+              >
+                <div className="flex items-center gap-3 min-w-0 flex-1">
+                  <span className="project-label shrink-0">{p.label}</span>
+                  <div className="min-w-0">
+                    <p className="text-sm font-semibold truncate" style={{ color: 'var(--card-bright)' }}>{p.title}</p>
+                    <p className="text-xs mt-0.5 truncate" style={{ color: 'var(--card-dim)' }}>{p.cardSummary}</p>
+                  </div>
+                </div>
+                <Link to={`/projects/${p.slug}`} className="btn-ghost text-xs px-3 py-1.5 shrink-0">View →</Link>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Bootcamp — Codeit Sprint projects */}
         <section>
           <div className="flex items-end justify-between gap-4 mb-4">
@@ -29,7 +55,7 @@ export default function ProjectsPage() {
             <span className="text-sm" style={{ color: 'var(--card-dim)' }}>2024.12 – 2025.07 · 팀장 3회</span>
           </div>
           <div className="glass-card overflow-hidden">
-            {projects.map((p, i) => (
+            {projects.filter((p) => p.group === 'codeit').map((p, i) => (
               <div
                 key={p.slug}
                 className="flex items-center justify-between gap-4 px-6 py-5 flex-wrap"

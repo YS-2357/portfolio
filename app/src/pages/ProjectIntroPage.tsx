@@ -64,7 +64,7 @@ export default function ProjectIntroPage() {
             decoding="async"
             fetchPriority="high"
             className="w-full max-w-[960px] rounded-2xl"
-            style={{ border: '1px solid var(--card-border)' }}
+            style={{ border: '1px solid var(--card-border)', background: '#ffffff' }}
           />
         </div>
 

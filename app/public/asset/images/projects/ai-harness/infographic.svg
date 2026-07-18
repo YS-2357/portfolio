@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#0d1630"/>
+      <stop offset="100%" stop-color="#070c18"/>
+    </radialGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#f2c14e"/>
+    </marker>
+    <marker id="arrowDim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="640" fill="url(#glow)"/>
+
+  <!-- title -->
+  <text x="60" y="64" fill="#f8fafc" font-size="26" font-weight="700" letter-spacing="-0.5">AI Development Harness — Single Source of Truth</text>
+  <text x="60" y="92" fill="#94a3b8" font-size="15">one repo governs every coding agent · deterministic gates decide quality</text>
+
+  <!-- SSOT repo box -->
+  <g>
+    <rect x="60" y="150" width="240" height="220" rx="16" fill="#0b1226" stroke="#f2c14e" stroke-width="1.5"/>
+    <text x="180" y="186" fill="#f2c14e" font-size="16" font-weight="700" text-anchor="middle">SSOT Repository</text>
+    <line x1="84" y1="200" x2="276" y2="200" stroke="#1e293b"/>
+    <text x="84" y="228" fill="#e2e8f0" font-size="13">• shared principles</text>
+    <text x="84" y="254" fill="#e2e8f0" font-size="13">• skills (docs · diagrams · LLM)</text>
+    <text x="84" y="280" fill="#e2e8f0" font-size="13">• model-routing policy (JSON)</text>
+    <text x="84" y="306" fill="#e2e8f0" font-size="13">• runtime config + hooks</text>
+    <text x="84" y="332" fill="#e2e8f0" font-size="13">• invariant tests</text>
+  </g>
+
+  <!-- apply arrow -->
+  <line x1="300" y1="260" x2="420" y2="260" stroke="#f2c14e" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="360" y="245" fill="#f2c14e" font-size="13" font-weight="600" text-anchor="middle">apply</text>
+  <text x="360" y="280" fill="#94a3b8" font-size="11" text-anchor="middle">one-command sync</text>
+
+  <!-- agents -->
+  <g>
+    <rect x="430" y="130" width="300" height="76" rx="14" fill="#0b1226" stroke="#334155"/>
+    <text x="454" y="162" fill="#f8fafc" font-size="15" font-weight="700">Claude Code</text>
+    <text x="454" y="186" fill="#94a3b8" font-size="12">main sessions · subagent fleets</text>
+
+    <rect x="430" y="222" width="300" height="76" rx="14" fill="#0b1226" stroke="#334155"/>
+    <text x="454" y="254" fill="#f8fafc" font-size="15" font-weight="700">Codex</text>
+    <text x="454" y="278" fill="#94a3b8" font-size="12">cross-model review · rescue</text>
+
+    <rect x="430" y="314" width="300" height="76" rx="14" fill="#0b1226" stroke="#334155"/>
+    <text x="454" y="346" fill="#f8fafc" font-size="15" font-weight="700">Kiro</text>
+    <text x="454" y="370" fill="#94a3b8" font-size="12">spec-driven workflows</text>
+  </g>
+
+  <!-- cross review arrows between agents -->
+  <line x1="560" y1="206" x2="560" y2="222" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowDim)" marker-start="url(#arrowDim)"/>
+  <line x1="560" y1="298" x2="560" y2="314" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowDim)" marker-start="url(#arrowDim)"/>
+  <text x="572" y="218" fill="#64748b" font-size="10">cross review</text>
+
+  <!-- arrow agents to gates -->
+  <line x1="730" y1="260" x2="850" y2="260" stroke="#f2c14e" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="790" y="245" fill="#f2c14e" font-size="13" font-weight="600" text-anchor="middle">output</text>
+
+  <!-- verification gates -->
+  <g>
+    <rect x="860" y="150" width="280" height="220" rx="16" fill="#0b1226" stroke="#f2c14e" stroke-width="1.5"/>
+    <text x="1000" y="186" fill="#f2c14e" font-size="16" font-weight="700" text-anchor="middle">Deterministic Gates</text>
+    <line x1="884" y1="200" x2="1116" y2="200" stroke="#1e293b"/>
+    <text x="884" y="228" fill="#e2e8f0" font-size="13">✓ tests · linters · type checks</text>
+    <text x="884" y="254" fill="#e2e8f0" font-size="13">✓ render + a11y validators</text>
+    <text x="884" y="280" fill="#e2e8f0" font-size="13">✓ routing-policy hooks</text>
+    <text x="884" y="306" fill="#e2e8f0" font-size="13">✓ forbidden-term scans</text>
+    <text x="884" y="332" fill="#e2e8f0" font-size="13">✓ weekly self-check pipeline</text>
+  </g>
+
+  <!-- bottom principle bar -->
+  <rect x="60" y="430" width="1080" height="150" rx="16" fill="#0b1226" stroke="#1e293b"/>
+  <text x="600" y="470" fill="#f8fafc" font-size="15" font-weight="700" text-anchor="middle">Principles</text>
+  <text x="130" y="510" fill="#94a3b8" font-size="13">01</text>
+  <text x="130" y="534" fill="#e2e8f0" font-size="14" font-weight="600">Fail loudly,</text>
+  <text x="130" y="554" fill="#e2e8f0" font-size="14" font-weight="600">succeed quietly</text>
+
+  <text x="410" y="510" fill="#94a3b8" font-size="13">02</text>
+  <text x="410" y="534" fill="#e2e8f0" font-size="14" font-weight="600">Commands decide,</text>
+  <text x="410" y="554" fill="#e2e8f0" font-size="14" font-weight="600">not model self-praise</text>
+
+  <text x="700" y="510" fill="#94a3b8" font-size="13">03</text>
+  <text x="700" y="534" fill="#e2e8f0" font-size="14" font-weight="600">Route each task</text>
+  <text x="700" y="554" fill="#e2e8f0" font-size="14" font-weight="600">to the right model tier</text>
+
+  <text x="960" y="510" fill="#94a3b8" font-size="13">04</text>
+  <text x="960" y="534" fill="#e2e8f0" font-size="14" font-weight="600">Edit the SSOT,</text>
+  <text x="960" y="554" fill="#e2e8f0" font-size="14" font-weight="600">never the copies</text>
+</svg>
