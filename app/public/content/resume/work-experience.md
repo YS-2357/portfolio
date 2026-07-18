@@ -3,6 +3,10 @@
 ## 메가존클라우드 | Manager, AI Architect Unit | 2026.02.09 - 현재
 - 역할 요약: Manager, AI Architect Unit — 클라우드 기반 AI 솔루션 아키텍처 설계.
 - 주요 활동:
+  - 사내 AI 시스템 PoC: Amazon Bedrock 기반 AI 에이전트 아키텍처 설계·구현, IaC(Terraform)·CI/CD 배포 자동화 담당.
+  - 고객사 경영진 대상 AI 코딩 도구 교육 지원: 개발 환경 세팅·핸즈온 진행.
+  - 사내 온보딩 교육 이수(AI Architect 101, aws101) 및 온보딩 발표.
+  - 생태계 활동: AWS Summit Seoul 2026(Industry·AI Day), AWS Partner Summit Seoul, AWS GenAI Lab Enablement Session, Google AI Live Seoul 2026 핸즈온, AWSKRUG 밋업 참여.
   - 자격증: AWS Certified Generative AI Developer - Professional (Beta, AIP-C01) 취득.
 
 ## (주)인톡 | 인턴 / AI 개발자 | 2025.11.06 - 2026.01.05

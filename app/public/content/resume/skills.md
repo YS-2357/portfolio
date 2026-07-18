@@ -13,7 +13,8 @@
 - Kiro (AWS)
 
 ## Cloud & Infra
-- AWS — EC2, Lambda, RDS, S3, CloudFront
+- Terraform (IaC)
+- AWS — EC2, Lambda, RDS, S3, CloudFront, ALB, API Gateway, DynamoDB, Cognito, CloudWatch, SSM, Secrets Manager, SNS
 - GCP
 - Firebase
 
@@ -23,3 +24,4 @@
 - Streamlit
 - React
 - TypeScript
+- Playwright (e2e/a11y)

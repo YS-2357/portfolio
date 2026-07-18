@@ -1,6 +1,40 @@
 # Projects
 
-## 멀티 LLM 응답 비교·요약 웹 서비스 | 2025.11 – Ongoing
+## AI 개발 하니스 엔지니어링 (멀티 에이전트 SSOT) | 2026.05 – Ongoing
+- 형태: 사이드 프로젝트
+- 기술: Bash, Python, Node.js, Claude Code, Codex, Kiro
+- GitHub: 비공개 저장소 (요청 시 시연 가능)
+- 요약: 멀티 AI 코딩 에이전트(Claude/Codex/Kiro) 공용 설정·스킬을 단일 진실 공급원으로 관리하는 개발 하니스 구축
+- 성과:
+  - 에이전트 간 공용 원칙·스킬·런타임 설정 SSOT 구성 및 적용 자동화
+  - 스킬 시스템 구축: 문서 생성·검증, 클라우드 아키텍처 다이어그램, 로컬 LLM 연동 등
+  - 결정적 검증 게이트(테스트·린트·렌더 검증) 기반 품질 관리 체계 수립
+  - spec 기반 AI-DLC 워크플로 설계, launchd 주간 자기개선 파이프라인 운영
+
+## AWS 서버리스 실시간 채팅 서비스 | 2026.06 – 2026.07
+- 형태: 사이드 프로젝트
+- 기술: Terraform, AWS Lambda, API Gateway(REST·WebSocket), DynamoDB, Cognito, Python, Node.js
+- GitHub: 비공개 저장소 (요청 시 시연 가능)
+- 요약: EC2/RDS 없이 Lambda + API Gateway + DynamoDB만으로 실시간 채팅 풀스택을 Terraform으로 배포
+- 성과:
+  - 엔드포인트별 Lambda 11개 분리 설계(Python 8 + Node.js 3) — 언어·quota 독립 운영
+  - OpenAPI/AsyncAPI contract-first로 FE/BE 계약 고정, WebSocket fan-out 브로드캐스트 구현
+  - JWT 검증·IDOR 차단·throttling 등 보안 강화, 유휴 비용 ~0 서버리스 설계
+  - Terraform 단일 패스 배포(런타임 config.json 자동 생성)로 배포 절차 1단계화
+
+## AWS 3-tier 커뮤니티 웹앱 (Terraform IaC) | 2026.05 – 2026.07
+- 형태: 사이드 프로젝트
+- 기술: Terraform, AWS(ALB, EC2, RDS PostgreSQL, SSM, CloudWatch, Secrets Manager), FastAPI, React, Playwright
+- GitHub: 비공개 저장소 (요청 시 시연 가능)
+- 요약: ALB(public) → EC2(nginx·FastAPI, private) → RDS(private) 3-tier 전 구간을 Terraform 코드로 배포·운영
+- 성과:
+  - 게시판·검색·실시간 WebSocket 채팅·신고/관리자·다크모드를 8개 spec으로 완성
+  - bastion 없이 SSM Run Command 배포 파이프라인 구축(로컬 빌드→S3→deploy)
+  - CloudWatch 대시보드+알람 7종·SNS·예산 알림 등 관측성 구성
+  - Playwright e2e + 접근성(a11y) 라이트/다크 이중 스캔으로 검증, 비밀은 Secrets Manager 참조로만 전달
+  - terraform apply→destroy 재현성 검증(잔여 리소스 0)
+
+## 멀티 LLM 응답 비교·요약 웹 서비스 | 2025.11 – 2026.03
 - 형태: 사이드 프로젝트
 - 기술: Python, Streamlit, FastAPI, LangChain, LangGraph, Supabase, Upstash, Render
 - LLM API: OpenAI, Anthropic(Claude), Gemini, Perplexity, Mistral, Groq, Cohere, DeepSeek
@@ -13,8 +47,8 @@
   - 사용자 인증(Supabase)·사용량 제한(Upstash) 적용으로 안정성 강화
   - FE/BE 분리 및 배포 구조 정비로 확장성 확보
 
-## GEO 기반 상세페이지 자동생성 서비스 | 2025.07 – 2025.09
-- 형태: 팀 프로젝트(팀장)
+## GEO 기반 상세페이지 자동생성 서비스 | 2025.06 – 2025.09
+- 형태: 팀 프로젝트 (교육 기간 팀원 / K-디지털 해커톤 팀장)
 - 기술: Python, React, FastAPI
 - GitHub: https://github.com/gyurili/2025-GEO-Project
 - 요약: GEO 최적화 기반 소상공인 상세페이지 자동 생성 도구 개발
