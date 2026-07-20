@@ -7,12 +7,12 @@
 
 # 🧾 Technical Evidence — 핵심 증거 요약
 
-- **terraform apply → destroy 전체 재현**: 배포 리소스 50개, 철거 후 잔여 리소스 0
-- **SSM Run Command 배포 파이프라인** — bastion 없이 로컬 빌드 → tarball → S3 → deploy.sh
-- **Secrets Manager ARN 참조**로만 비밀 전달 (SSM 커맨드·로컬 파일에 비밀 미탑재)
-- **CloudWatch 대시보드 + 알람 7종 + SNS + 예산 알림** 관측성 구성
-- **Playwright e2e + a11y 라이트/다크 이중 스캔** fresh ALL_PASS
-- **WebSocket 프록시 검증** — ALB 경유 두 브라우저 간 실시간 왕복(WS Upgrade)
+- **terraform apply → destroy 전체 재현** — 인프라 50개를 명령으로 만들고, 흔적 없이 전부 지워지는지까지 검증 (잔여 리소스 0)
+- **SSM Run Command 배포** — 서버에 직접 접속(SSH)하지 않고 AWS 관리 채널로 배포 (로컬 빌드 → S3 → deploy.sh)
+- **Secrets Manager ARN 참조** — 비밀 정보(DB 암호 등)는 값 대신 보관 위치(ARN)만 전달, 배포 명령과 로컬 파일에 비밀값이 남지 않음
+- **모니터링 구성** — 장애·비용을 자동 감지: CloudWatch 대시보드 + 알람 7종 + SNS 알림 + 예산 경보
+- **Playwright e2e + a11y 이중 스캔** — 실제 브라우저 시나리오 테스트와 접근성 검사를 라이트/다크 모드 양쪽에서 전부 통과
+- **WebSocket 프록시 검증** — 두 브라우저의 실시간 메시지가 로드밸런서(ALB)를 거쳐 왕복하는지 확인 (WS Upgrade)
 
 # 🔹 S (Situation) — 배경
 

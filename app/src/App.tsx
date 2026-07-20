@@ -11,7 +11,7 @@ import './App.css'
 
 const TRUST_SIGNALS = [
   { label: 'Megazone Cloud', sub: 'AI Architect Unit · Manager' },
-  { label: 'AWS GenAI Pro', sub: 'AIP-C01 Beta · Early Adopter' },
+  { label: 'AWS GenAI Pro', sub: 'AWS 생성형 AI 자격 (AIP-C01 Beta)' },
   { label: 'Top 0.8%', sub: '3rd · 7th K-Digital Training Hackathon' },
 ]
 
@@ -22,7 +22,7 @@ const SKILL_CATEGORIES = [
   { label: 'Engineering',   skills: ['Python', 'FastAPI', 'Streamlit', 'React', 'TypeScript'] },
 ]
 
-const CAPABILITIES = ['AI Agents · RAG', 'AWS · Terraform IaC', 'Evaluation · Delivery Automation']
+const CAPABILITIES = ['AI Agents · RAG', 'AWS · Terraform IaC', '검증·배포 자동화']
 
 function App() {
   useDocumentMeta(STATIC_META['/'].title, STATIC_META['/'].description)
@@ -115,7 +115,7 @@ function App() {
               </p>
             )}
             <p className="text-base leading-relaxed mb-5 max-w-lg" style={{ color: 'var(--card-text)' }}>
-              Amazon Bedrock 기반 AI Agent와 RAG를 Terraform·CI/CD·검증 자동화로 운영 가능한 시스템까지 만듭니다.
+              AI 에이전트와 RAG(문서 근거 답변)를 데모로 끝내지 않고, 인프라 코드(Terraform)·자동 배포(CI/CD)·검증 자동화로 실제 운영 가능한 시스템까지 만듭니다.
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
               {CAPABILITIES.map((c) => <span key={c} className="skill-tag">{c}</span>)}
