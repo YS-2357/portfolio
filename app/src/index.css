@@ -73,6 +73,24 @@
 
 @layer components {
 
+  /* ── Skip link — visually hidden until keyboard focus ── */
+  .skip-link {
+    position: fixed;
+    top: -100px;
+    left: 16px;
+    z-index: 100;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background: var(--color-solar, #f2c14e);
+    color: #070c18;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: top 0.15s ease;
+  }
+  .skip-link:focus {
+    top: 12px;
+  }
+
   /* ── Large blackboard-bold page anchor (ℕ ℤ ℚ ℝ ℂ) ── */
   .glyph {
     font-family: 'STIX Two Math', 'STIX Two Text', 'Latin Modern Math', serif;

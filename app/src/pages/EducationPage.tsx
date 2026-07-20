@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react'
 import { parseMarkdownBlocks } from '../lib/markdownBlocks'
+import { STATIC_META } from '../data/routeMeta'
+import { useDocumentMeta } from '../lib/useDocumentMeta'
 import { fetchText } from '../shared/content'
 import PageShell from '../components/PageShell'
 import OrbitalRing from '../components/OrbitalRing'
 
 export default function EducationPage() {
+  useDocumentMeta(STATIC_META['/education'].title, STATIC_META['/education'].description)
   const [blocks, setBlocks] = useState<ReturnType<typeof parseMarkdownBlocks>>([])
 
   useEffect(() => {

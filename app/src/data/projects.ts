@@ -8,6 +8,7 @@ export type ProjectMeta = {
   pages: Array<'star' | 'report'>
   cardSummary: string
   subtitle: string
+  ctaLabel: string
   primaryMetric: string
   primaryMetricLabel: string
   featured: boolean
@@ -25,6 +26,7 @@ export const projects: ProjectMeta[] = [
     pages: ['star'],
     cardSummary: 'ALB→EC2→RDS 전 구간 Terraform 관리, SSM 배포·e2e/a11y 검증까지 완료한 커뮤니티 앱',
     subtitle: '인프라 코드화부터 배포·관측성·철거 검증까지 전체 수명주기',
+    ctaLabel: 'Terraform 아키텍처·검증 →',
     primaryMetric: '50 → 0',
     primaryMetricLabel: 'apply→destroy 리소스 검증',
     featured: true,
@@ -40,6 +42,7 @@ export const projects: ProjectMeta[] = [
     pages: ['star'],
     cardSummary: 'Lambda 11개(Python 8 + Node 3) + API Gateway + DynamoDB, 유휴 비용 ~0 실시간 채팅',
     subtitle: 'REST·WebSocket 이원 구성과 Terraform 단일 패스 배포',
+    ctaLabel: '서버리스 채팅 설계 →',
     primaryMetric: '',
     primaryMetricLabel: '',
     featured: false,
@@ -55,6 +58,7 @@ export const projects: ProjectMeta[] = [
     pages: ['star'],
     cardSummary: 'Claude·Codex·Kiro 공용 원칙/스킬/설정을 SSOT로 관리, 결정적 검증 게이트로 품질 판정',
     subtitle: '멀티 AI 에이전트 운영을 구조로 푸는 하니스 엔지니어링',
+    ctaLabel: 'AI 하니스 설계 →',
     primaryMetric: '',
     primaryMetricLabel: '',
     featured: false,
@@ -70,6 +74,7 @@ export const projects: ProjectMeta[] = [
     pages: ['star', 'report'],
     cardSummary: '단일 쿼리로 8개 LLM을 병렬 호출해 응답을 실시간 비교·요약하는 서비스',
     subtitle: '멀티 모델 팬아웃·스트리밍·랭킹 파이프라인 설계/구현',
+    ctaLabel: 'Compare-AI 사례 →',
     primaryMetric: '',
     primaryMetricLabel: '',
     featured: false,
@@ -85,6 +90,7 @@ export const projects: ProjectMeta[] = [
     pages: ['star', 'report'],
     cardSummary: 'GEO 최적화 기반 소상공인 상세페이지 자동 생성 — K-Digital 장관상 수상작',
     subtitle: '데이터 분석→자동 생성→출력까지 이어지는 End-to-End 흐름',
+    ctaLabel: 'GEOPage 상세 →',
     primaryMetric: '3rd / 389',
     primaryMetricLabel: 'K-Digital Hackathon',
     featured: true,
@@ -100,6 +106,7 @@ export const projects: ProjectMeta[] = [
     pages: ['star', 'report'],
     cardSummary: 'Hybrid Search + Re-ranking 기반 RFP 문서 요약·질의응답 시스템',
     subtitle: '최적화된 RAG 파이프라인과 QA 챗봇 설계',
+    ctaLabel: 'RFPilot RAG 설계 →',
     primaryMetric: '',
     primaryMetricLabel: '',
     featured: false,
@@ -115,6 +122,7 @@ export const projects: ProjectMeta[] = [
     pages: ['star', 'report'],
     cardSummary: 'YOLOv8 기반 알약 객체 탐지 모델 — 객체 탐지 파이프라인 구현',
     subtitle: '정확도와 재현성을 동시에 확보한 헬스케어 탐지 시스템',
+    ctaLabel: '알약 탐지 파이프라인 →',
     primaryMetric: '',
     primaryMetricLabel: '',
     featured: false,

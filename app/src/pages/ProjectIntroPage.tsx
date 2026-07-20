@@ -5,6 +5,8 @@ import remarkGfm from 'remark-gfm'
 import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import { projects } from '../data/projects'
+import { projectMeta, STATIC_META } from '../data/routeMeta'
+import { useDocumentMeta } from '../lib/useDocumentMeta'
 import { fetchText } from '../shared/content'
 import PageShell from '../components/PageShell'
 import OrbitalRing from '../components/OrbitalRing'
@@ -15,6 +17,9 @@ export default function ProjectIntroPage() {
   const { project } = useParams<Params>()
   const [starContent, setStarContent] = useState('')
   const meta = projects.find((item) => item.slug === project)
+
+  const doc = meta ? projectMeta(meta) : STATIC_META['/projects']
+  useDocumentMeta(doc.title, doc.description)
 
   if (!meta) return null
 

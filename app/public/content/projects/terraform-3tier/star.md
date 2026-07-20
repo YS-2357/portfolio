@@ -5,6 +5,15 @@
 - **형태**: 개인 사이드 프로젝트
 - **자료**: 비공개 저장소 (요청 시 시연 가능)
 
+# 🧾 Technical Evidence — 핵심 증거 요약
+
+- **terraform apply → destroy 전체 재현**: 배포 리소스 50개, 철거 후 잔여 리소스 0
+- **SSM Run Command 배포 파이프라인** — bastion 없이 로컬 빌드 → tarball → S3 → deploy.sh
+- **Secrets Manager ARN 참조**로만 비밀 전달 (SSM 커맨드·로컬 파일에 비밀 미탑재)
+- **CloudWatch 대시보드 + 알람 7종 + SNS + 예산 알림** 관측성 구성
+- **Playwright e2e + a11y 라이트/다크 이중 스캔** fresh ALL_PASS
+- **WebSocket 프록시 검증** — ALB 경유 두 브라우저 간 실시간 왕복(WS Upgrade)
+
 # 🔹 S (Situation) — 배경
 
 > 콘솔 클릭으로 만든 인프라는 재현이 불가능하고, 학습용 실습은 대부분 배포 직전에 멈춥니다.

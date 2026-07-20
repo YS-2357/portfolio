@@ -17,6 +17,11 @@ const EXTERNAL_LINKS: Partial<Record<SystemName, string>> = {
   octonion:   'https://www.linkedin.com/in/youngsun-joung-5b0584345',
 }
 
+const EXTERNAL_LABELS: Partial<Record<SystemName, string>> = {
+  quaternion: 'GitHub',
+  octonion:   'LinkedIn',
+}
+
 function Node({ name, active }: { name: SystemName; active: boolean }) {
   const s = SYSTEMS[name]
   const internalHref = INTERNAL_LINKS[name]
@@ -58,7 +63,7 @@ function Node({ name, active }: { name: SystemName; active: boolean }) {
   }
   if (externalHref) {
     return (
-      <a href={externalHref} target="_blank" rel="noopener noreferrer" title={s.label}>
+      <a href={externalHref} target="_blank" rel="noopener noreferrer" title={s.label} aria-label={EXTERNAL_LABELS[name] ?? s.label}>
         {inner}
       </a>
     )
@@ -80,7 +85,8 @@ function Sep({ symbol }: { symbol: string }) {
 
 export default function ChainBar({ active }: Props) {
   return (
-    <div className="flex flex-wrap items-end justify-center gap-3 sm:gap-4 py-10 px-4">
+    <div className="pb-8">
+    <div className="flex flex-wrap items-end justify-center gap-3 sm:gap-4 pt-10 pb-4 px-4">
       {/* Origin — Home */}
       <Link to="/" title="Home" className="flex flex-col items-center gap-1">
         <span
@@ -121,6 +127,13 @@ export default function ChainBar({ active }: Props) {
       {EXTENSION_ORDER.map((name) => (
         <Node key={name} name={name} active={name === active} />
       ))}
+    </div>
+
+    {/* Plain-text contact links — the ℍ/𝕆 symbols above point to the same places */}
+    <div className="flex justify-center gap-4 text-xs" style={{ color: 'rgba(245,245,239,0.45)' }}>
+      <a href={EXTERNAL_LINKS.quaternion} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>GitHub ↗</a>
+      <a href={EXTERNAL_LINKS.octonion} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>LinkedIn ↗</a>
+    </div>
     </div>
   )
 }

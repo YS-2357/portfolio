@@ -11,6 +11,8 @@ const NAV_LINKS = [
 
 export default function Nav() {
   return (
+    <>
+    <a href="#main" className="skip-link">본문으로 건너뛰기</a>
     <nav
       className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-10"
       style={{
@@ -50,5 +52,6 @@ export default function Nav() {
         GitHub ↗
       </a>
     </nav>
+    </>
   )
 }

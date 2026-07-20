@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react'
+import { STATIC_META } from '../data/routeMeta'
+import { useDocumentMeta } from '../lib/useDocumentMeta'
 import { fetchText } from '../shared/content'
 import PageShell from '../components/PageShell'
 import OrbitalRing from '../components/OrbitalRing'
@@ -61,6 +63,7 @@ const parseAwards = (text: string): AwardSection[] => {
 }
 
 export default function AwardsPage() {
+  useDocumentMeta(STATIC_META['/awards'].title, STATIC_META['/awards'].description)
   const [sections, setSections] = useState<AwardSection[]>([])
 
   useEffect(() => {

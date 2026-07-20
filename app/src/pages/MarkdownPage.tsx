@@ -5,6 +5,8 @@ import remarkGfm from 'remark-gfm'
 import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import { projects } from '../data/projects'
+import { projectPageMeta, STATIC_META } from '../data/routeMeta'
+import { useDocumentMeta } from '../lib/useDocumentMeta'
 import { fetchText } from '../shared/content'
 import PageShell from '../components/PageShell'
 
@@ -17,6 +19,11 @@ export default function MarkdownPage() {
   const [content, setContent] = useState('')
   const currentPage = (page as PageName) || 'star'
   const meta = projects.find((item) => item.slug === project)
+
+  const doc = meta
+    ? projectPageMeta(meta, pages.includes(currentPage) ? currentPage : 'star')
+    : STATIC_META['/projects']
+  useDocumentMeta(doc.title, doc.description)
 
   useEffect(() => {
     if (!project || !meta) return

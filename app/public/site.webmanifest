@@ -1,0 +1,15 @@
+{
+  "name": "정영선 | AI Engineer · M.S. Mathematics",
+  "short_name": "정영선",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#070c18",
+  "theme_color": "#070c18",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

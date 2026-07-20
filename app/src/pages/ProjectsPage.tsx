@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom'
 import { projects } from '../data/projects'
+import { STATIC_META } from '../data/routeMeta'
+import { useDocumentMeta } from '../lib/useDocumentMeta'
 import PageShell from '../components/PageShell'
 import OrbitalRing from '../components/OrbitalRing'
 
 export default function ProjectsPage() {
+  useDocumentMeta(STATIC_META['/projects'].title, STATIC_META['/projects'].description)
   return (
     <PageShell system="complex">
       <OrbitalRing size={500} opacity={0.06} rotate={20} className="absolute top-16 right-0" style={{ position: 'absolute' }} />
@@ -42,7 +45,7 @@ export default function ProjectsPage() {
                     <p className="text-xs mt-0.5 truncate" style={{ color: 'var(--card-dim)' }}>{p.cardSummary}</p>
                   </div>
                 </div>
-                <Link to={`/projects/${p.slug}`} className="btn-ghost text-xs px-3 py-1.5 shrink-0">View →</Link>
+                <Link to={`/projects/${p.slug}`} className="btn-ghost text-xs px-3 py-1.5 shrink-0">{p.ctaLabel}</Link>
               </div>
             ))}
           </div>
@@ -68,7 +71,7 @@ export default function ProjectsPage() {
                     <p className="text-xs mt-0.5 truncate" style={{ color: 'var(--card-dim)' }}>{p.cardSummary}</p>
                   </div>
                 </div>
-                <Link to={`/projects/${p.slug}`} className="btn-ghost text-xs px-3 py-1.5 shrink-0">View →</Link>
+                <Link to={`/projects/${p.slug}`} className="btn-ghost text-xs px-3 py-1.5 shrink-0">{p.ctaLabel}</Link>
               </div>
             ))}
           </div>

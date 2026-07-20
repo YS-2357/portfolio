@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { featuredProjects, bootcampProjects } from './data/projects'
+import { STATIC_META } from './data/routeMeta'
+import { useDocumentMeta } from './lib/useDocumentMeta'
 import { fetchText } from './shared/content'
 import PageShell from './components/PageShell'
 import OrbitalRing from './components/OrbitalRing'
@@ -20,7 +22,10 @@ const SKILL_CATEGORIES = [
   { label: 'Engineering',   skills: ['Python', 'FastAPI', 'Streamlit', 'React', 'TypeScript'] },
 ]
 
+const CAPABILITIES = ['AI Agents · RAG', 'AWS · Terraform IaC', 'Evaluation · Delivery Automation']
+
 function App() {
+  useDocumentMeta(STATIC_META['/'].title, STATIC_META['/'].description)
   const [intro, setIntro] = useState('')
   const [awards, setAwards] = useState({
     bootcamp: '제7회 K-디지털 트레이닝 해커톤 고용노동부 장관상 (우수상) — 389팀 중 3등',
@@ -105,10 +110,16 @@ function App() {
               ℕ <span style={{ color: 'var(--card-muted)' }}>⊂</span> ℤ <span style={{ color: 'var(--card-muted)' }}>⊂</span> ℚ <span style={{ color: 'var(--card-muted)' }}>⊂</span> ℝ <span style={{ color: 'var(--card-muted)' }}>⊂</span> ℂ
             </p>
             {intro && (
-              <p className="text-base leading-relaxed mb-8 max-w-lg" style={{ color: 'var(--card-dim)' }}>
+              <p className="text-base leading-relaxed mb-3 max-w-lg" style={{ color: 'var(--card-dim)' }}>
                 {intro}
               </p>
             )}
+            <p className="text-base leading-relaxed mb-5 max-w-lg" style={{ color: 'var(--card-text)' }}>
+              Amazon Bedrock 기반 AI Agent와 RAG를 Terraform·CI/CD·검증 자동화로 운영 가능한 시스템까지 만듭니다.
+            </p>
+            <div className="flex flex-wrap gap-2 mb-8">
+              {CAPABILITIES.map((c) => <span key={c} className="skill-tag">{c}</span>)}
+            </div>
             <div className="flex flex-wrap gap-3 mb-10">
               <Link to="/projects" className="btn-solar">View Projects</Link>
               <Link to="/experience" className="btn-ghost">Experience →</Link>
@@ -184,7 +195,7 @@ function App() {
               <h3 className="text-xl font-semibold mb-2" style={{ color: 'var(--card-bright)' }}>{p.title}</h3>
               <p className="text-base leading-relaxed mb-5" style={{ color: 'var(--card-dim)' }}>{p.cardSummary}</p>
               <div className="flex justify-end pt-4" style={{ borderTop: '1px solid var(--card-border)' }}>
-                <Link to={`/projects/${p.slug}`} className="btn-solar text-sm px-4 py-2">View Details →</Link>
+                <Link to={`/projects/${p.slug}`} className="btn-solar text-sm px-4 py-2" aria-label={`${p.title} 상세 보기`}>View Details →</Link>
               </div>
             </div>
           ))}
@@ -207,7 +218,7 @@ function App() {
                   <span className="project-label shrink-0">{p.label}</span>
                   <span className="text-sm font-medium truncate" style={{ color: 'var(--card-text)' }}>{p.title}</span>
                 </div>
-                <Link to={`/projects/${p.slug}`} className="btn-ghost text-xs px-3 py-1.5 shrink-0">View →</Link>
+                <Link to={`/projects/${p.slug}`} className="btn-ghost text-xs px-3 py-1.5 shrink-0">{p.ctaLabel}</Link>
               </div>
             ))}
           </div>

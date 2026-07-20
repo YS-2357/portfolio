@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react'
 import { parseMarkdownBlocks } from '../lib/markdownBlocks'
+import { STATIC_META } from '../data/routeMeta'
+import { useDocumentMeta } from '../lib/useDocumentMeta'
 import { fetchText } from '../shared/content'
 import PageShell from '../components/PageShell'
 import OrbitalRing from '../components/OrbitalRing'
 
 export default function AboutPage() {
+  useDocumentMeta(STATIC_META['/about'].title, STATIC_META['/about'].description)
   const [blocks, setBlocks] = useState<ReturnType<typeof parseMarkdownBlocks>>([])
 
   useEffect(() => {
@@ -40,7 +43,7 @@ export default function AboutPage() {
           {/* ── Nationality ── */}
           {nationality && (
             <div className="glass-card p-6">
-              <p className="eyebrow mb-4">Nationality</p>
+              <h2 className="eyebrow mb-4">Nationality</h2>
               <div className="flex flex-wrap gap-3">
                 <div
                   className="flex items-center gap-2.5 rounded-xl px-4 py-3"
@@ -72,7 +75,7 @@ export default function AboutPage() {
           {/* ── Hobbies ── */}
           {hobbies && (
             <div>
-              <p className="eyebrow mb-4">Hobbies</p>
+              <h2 className="eyebrow mb-4">Hobbies</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 
                 {/* Coffee */}
@@ -108,7 +111,7 @@ export default function AboutPage() {
             <div className="glass-card p-6">
               <div className="flex items-center gap-3 mb-6">
                 <span className="text-2xl">🪖</span>
-                <p className="eyebrow" style={{ marginBottom: 0 }}>Military Service</p>
+                <h2 className="eyebrow" style={{ marginBottom: 0 }}>Military Service</h2>
               </div>
               <div className="space-y-5">
 

@@ -45,7 +45,7 @@ export default function PageShell({ children, system = 'overview', className = '
         aria-hidden="true"
       />
 
-      {children}
+      <main id="main">{children}</main>
 
       {/* Inclusion-chain footer */}
       <ChainBar active={system} />
