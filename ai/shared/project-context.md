@@ -1,6 +1,15 @@
+---
+type: Guide
+title: "Project Context"
+description: "Shared project goals, stack, and content ownership context."
+created: 2026-03-17
+generated: false
+status: draft
+---
+
 # Project Context
 
-- Project: portfolio (github.com/YS-2357/portfolio)
+- Project: portfolio application in this repository
 - Owner: 정영선 (Young Sun Joung) — Manager, AI Architect Unit at Megazone Cloud
 - Goal: personal portfolio SPA showcasing AI engineering work
 - App root: `app/`

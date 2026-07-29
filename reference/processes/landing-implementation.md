@@ -1,3 +1,12 @@
+---
+type: Guide
+title: "Landing Template Integration Guide"
+description: "Implementation process for integrating landing templates."
+created: 2025-12-29
+generated: false
+status: draft
+---
+
 # Landing Template Integration Guide
 
 ## Scope

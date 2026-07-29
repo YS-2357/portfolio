@@ -1,3 +1,12 @@
+---
+type: Guide
+title: "Glossary"
+description: "Shared terminology used by the portfolio application."
+created: 2026-03-17
+generated: false
+status: draft
+---
+
 # Glossary
 
 - static site: frontend served without SSR/runtime backend requirement

@@ -1,3 +1,12 @@
+---
+type: Guide
+title: "Architecture"
+description: "Shared frontend architecture context for AI tools."
+created: 2026-03-17
+generated: false
+status: draft
+---
+
 # Architecture
 
 - `app/src/pages/` — route-level pages (App.tsx = landing, others match routes)

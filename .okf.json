@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "mode": "strict",
+  "bundles": ["ai", "reference"],
+  "numbered_collections": [],
+  "next_record_id": "K0001",
+  "exceptions": [
+    {"pattern": "SKILLS.md", "reason": "repository skill catalog contract", "review_on": "2026-10-29"},
+    {"pattern": "app/README.md", "reason": "application package guide outside document bundles", "review_on": "2026-10-29"},
+    {"pattern": "app/public/content/**/*.md", "reason": "public React-rendered content with a frontmatter-free loader contract", "review_on": "2026-10-29"},
+    {"pattern": "skills/*/references/*.md", "reason": "skill-local support references governed with their owning skill", "review_on": "2026-10-29"}
+  ]
+}

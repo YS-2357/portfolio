@@ -1,3 +1,12 @@
+---
+type: Guide
+title: "Frontend Architecture"
+description: "Architecture, routing, and content ownership overview."
+created: 2025-12-29
+generated: false
+status: draft
+---
+
 # Frontend Architecture
 
 ## Goal

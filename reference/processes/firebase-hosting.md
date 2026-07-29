@@ -1,3 +1,12 @@
+---
+type: Guide
+title: "Firebase Hosting"
+description: "Firebase Hosting deployment guide."
+created: 2025-12-29
+generated: false
+status: draft
+---
+
 # Firebase Hosting
 
 ## Deployment Overview

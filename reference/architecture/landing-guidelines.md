@@ -1,3 +1,12 @@
+---
+type: Guide
+title: "Landing Page Guidelines"
+description: "Architecture and presentation rules for the landing page."
+created: 2025-12-29
+generated: false
+status: draft
+---
+
 # Landing Page Guidelines
 
 ## Visual Direction

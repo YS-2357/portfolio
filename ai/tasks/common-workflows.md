@@ -1,3 +1,12 @@
+---
+type: Guide
+title: "Common Workflows"
+description: "Repeatable repository workflows for AI tools."
+created: 2026-03-17
+generated: false
+status: draft
+---
+
 # Common Workflows
 
 ## Local Development

@@ -1,3 +1,12 @@
+---
+type: Guide
+title: "Content Schema (Resume / Portfolio)"
+description: "Content schema for resume, project, and award pages."
+created: 2025-12-29
+generated: false
+status: draft
+---
+
 # Content Schema (Resume / Portfolio)
 
 Defines the shared content structure used by frontend and backend.

@@ -1,3 +1,12 @@
+---
+type: Guide
+title: "Refactoring Guide"
+description: "Repository-specific safe refactoring workflow."
+created: 2025-12-31
+generated: false
+status: draft
+---
+
 # Refactoring Guide
 
 ## Goal

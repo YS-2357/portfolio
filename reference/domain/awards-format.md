@@ -1,3 +1,12 @@
+---
+type: Guide
+title: "Awards Data Format"
+description: "Markdown data contract for award content."
+created: 2025-12-31
+generated: false
+status: draft
+---
+
 # Awards Data Format
 
 ## Goal
