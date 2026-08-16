@@ -2,9 +2,15 @@
 type: Guide
 title: "Architecture"
 description: "Shared frontend architecture context for AI tools."
-created: 2026-03-17
-generated: false
+tags: ["ai", "shared", "architecture"]
 status: draft
+generated:
+  by: claude-code/sonnet-5
+  at: "2026-08-16T13:10:10+09:00"
+verified: []
+stale_after: "2027-08-16"
+x-ys:
+  created_at: 2026-03-17
 ---
 
 # Architecture
