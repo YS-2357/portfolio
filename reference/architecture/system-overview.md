@@ -2,9 +2,15 @@
 type: Guide
 title: "Frontend Architecture"
 description: "Architecture, routing, and content ownership overview."
-created: 2025-12-29
-generated: false
+tags: ["reference", "architecture", "frontend"]
 status: draft
+generated:
+  by: claude-code/sonnet-5
+  at: "2026-08-16T13:10:10+09:00"
+verified: []
+stale_after: "2027-08-16"
+x-ys:
+  created_at: 2025-12-29
 ---
 
 # Frontend Architecture

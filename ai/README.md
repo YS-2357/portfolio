@@ -1,11 +1,3 @@
----
-type: Guide
-title: "AI Files"
-description: "Shared AI context and tool-specific guidance for this repository."
-created: 2026-03-17
-generated: false
-status: draft
----
 
 # AI Files
 
